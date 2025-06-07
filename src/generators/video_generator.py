@@ -277,25 +277,23 @@ class VideoGenerator:
         return '\n'.join(lines)
 
     def _create_title_overlay(self, episode: Episode, duration: float, series_title: str = None):
-        """タイトルオーバーレイを作成"""
+        """タイトルオーバーレイを作成（PILを使用）"""
         print("Creating title overlay...")
 
         # カスタマイズ可能な設定
         TITLE_CONFIG = {
             'font_size': 62,
-            'text_color': 'white',
-            'margin_top': 74,
+            'text_color': (255, 255, 255),  # RGB形式
+            'margin_top': 57,
             'margin_left': 40,
             'position': 'top-left',
             'text_shadow': True,
-            'shadow_style': 'thick',     # 'normal', 'thick'
+            'shadow_style': 'thick',
             'shadow_offset': 2,
-            'shadow_thickness': 3,       # 太い影の厚さ
-            'shadow_color': 'black',
+            'shadow_thickness': 3,
+            'shadow_color': (0, 0, 0),  # RGB形式
             'shadow_opacity': 0.7,
-            'use_background': False,
-            'background_color': (0, 0, 0, 180),
-            'background_padding': 20
+            'padding': 30  # テキスト周りの余白
         }
 
         try:
@@ -312,132 +310,117 @@ class VideoGenerator:
 
             print(f"Final title text: {repr(title_text)}")
 
-            # タイトルクリップを作成
-            title_fonts = [
+            # PILでテキストを描画
+            from PIL import ImageFont
+
+            # フォントを試す
+            font_paths = [
+                '/System/Library/Fonts/Helvetica.ttc',
                 '/System/Library/Fonts/Avenir Next.ttc',
                 '/System/Library/Fonts/Avenir.ttc',
                 '/System/Library/Fonts/HelveticaNeue.ttc',
-                '/System/Library/Fonts/Helvetica.ttc',
             ]
 
-            title_clip = None
-            selected_font = None
-            for font in title_fonts:
+            font = None
+            for font_path in font_paths:
                 try:
-                    title_clip = TextClip(
-                        text=title_text,
-                        font_size=TITLE_CONFIG['font_size'],
-                        font=font,
-                        color=TITLE_CONFIG['text_color'],
-                        method='label',
-                        text_align='left'
-                    )
-                    print(f"Successfully using font: {font}")
-                    print(f"Title clip size: {title_clip.size}")
-                    selected_font = font
+                    font = ImageFont.truetype(font_path, TITLE_CONFIG['font_size'])
+                    print(f"Successfully loaded font: {font_path}")
                     break
-                except Exception as e:
-                    print(f"Font {font} failed: {e}")
+                except:
                     continue
 
-            # フォールバック
-            if title_clip is None:
-                title_clip = TextClip(
-                    text=title_text,
-                    font_size=TITLE_CONFIG['font_size'],
-                    color=TITLE_CONFIG['text_color'],
-                    method='label',
-                    text_align='left'
-                )
-                print("Using system default font")
+            if font is None:
+                # デフォルトフォントを使用
+                font = ImageFont.load_default()
+                print("Using default font")
 
-            # Validate title clip
-            if not self._validate_clip(title_clip, "title text"):
-                raise ValueError("Title clip has invalid dimensions")
+            # ダミー画像でテキストサイズを測定
+            dummy_img = Image.new('RGBA', (1, 1), (0, 0, 0, 0))
+            dummy_draw = ImageDraw.Draw(dummy_img)
 
-            title_clip = title_clip.with_duration(duration)
+            # textbboxを使用してテキストの境界ボックスを取得
+            bbox = dummy_draw.textbbox((0, 0), title_text, font=font)
+            text_width = bbox[2] - bbox[0]
+            text_height = bbox[3] - bbox[1]
 
-            # 位置を計算
-            title_width, title_height = title_clip.size
+            # パディングを含めた画像サイズ
+            padding = TITLE_CONFIG['padding']
+            img_width = text_width + padding * 2
+            img_height = text_height + padding * 2
 
-            if TITLE_CONFIG['position'] == 'top-left':
-                text_x = TITLE_CONFIG['margin_left']
-                text_y = TITLE_CONFIG['margin_top']
-            elif TITLE_CONFIG['position'] == 'top-right':
-                text_x = 1920 - title_width - TITLE_CONFIG['margin_left']
-                text_y = TITLE_CONFIG['margin_top']
-            elif TITLE_CONFIG['position'] == 'bottom-left':
-                text_x = TITLE_CONFIG['margin_left']
-                text_y = 1080 - title_height - TITLE_CONFIG['margin_top']
-            elif TITLE_CONFIG['position'] == 'bottom-right':
-                text_x = 1920 - title_width - TITLE_CONFIG['margin_left']
-                text_y = 1080 - title_height - TITLE_CONFIG['margin_top']
-            else:
-                text_x = TITLE_CONFIG['margin_left']
-                text_y = TITLE_CONFIG['margin_top']
+            print(f"Text size: {text_width}x{text_height}")
+            print(f"Image size with padding: {img_width}x{img_height}")
 
-            # 画面外に出ないように調整
-            text_x = max(0, min(text_x, 1920 - title_width))
-            text_y = max(0, min(text_y, 1080 - title_height))
+            # 透明な画像を作成
+            img = Image.new('RGBA', (img_width, img_height), (0, 0, 0, 0))
+            draw = ImageDraw.Draw(img)
 
-            print(f"Text position: ({text_x}, {text_y})")
-
-            # タイトルテキストの位置を設定
-            title_clip = title_clip.with_position((int(text_x), int(text_y)))
-
-            # 影付きテキストを作成
+            # 影を描画（thickスタイルの場合）
             if TITLE_CONFIG['text_shadow']:
-                shadow_clips = []
-
                 if TITLE_CONFIG['shadow_style'] == 'thick':
-                    # 太い影：複数の影を少しずつずらして重ねる
                     thickness = TITLE_CONFIG['shadow_thickness']
-                    base_opacity = TITLE_CONFIG['shadow_opacity']
+                    shadow_alpha = int(255 * TITLE_CONFIG['shadow_opacity'])
 
-                    # 影を配置（近くに太く）
-                    for i in range(1, thickness + 1):
-                        # 右下方向に段階的に配置
-                        shadow_clip = TextClip(
-                            text=title_text,
-                            font_size=TITLE_CONFIG['font_size'],
-                            font=selected_font if selected_font else None,
-                            color=TITLE_CONFIG['shadow_color'],
-                            method='label',
-                            text_align='left'
+                    for i in range(thickness, 0, -1):
+                        opacity = shadow_alpha * (1 - (i / (thickness * 2)))
+                        shadow_color = TITLE_CONFIG['shadow_color'] + (int(opacity),)
+                        draw.text(
+                            (padding + i, padding + i),
+                            title_text,
+                            font=font,
+                            fill=shadow_color
                         )
-                        shadow_clip = shadow_clip.with_duration(duration)
-                        shadow_x = text_x + i
-                        shadow_y = text_y + i
-                        shadow_clip = shadow_clip.with_position((int(shadow_x), int(shadow_y)))
-                        # 外側ほど薄くする
-                        opacity = base_opacity * (1 - (i / (thickness * 2)))
-                        shadow_clip = shadow_clip.with_opacity(opacity)
-                        shadow_clips.append(shadow_clip)
-
-                else:  # normal
-                    # 通常の影：1つだけ
-                    shadow_clip = TextClip(
-                        text=title_text,
-                        font_size=TITLE_CONFIG['font_size'],
-                        font=selected_font if selected_font else None,
-                        color=TITLE_CONFIG['shadow_color'],
-                        method='label',
-                        text_align='left'
+                else:
+                    # 通常の影
+                    shadow_alpha = int(255 * TITLE_CONFIG['shadow_opacity'])
+                    shadow_color = TITLE_CONFIG['shadow_color'] + (shadow_alpha,)
+                    offset = TITLE_CONFIG['shadow_offset']
+                    draw.text(
+                        (padding + offset, padding + offset),
+                        title_text,
+                        font=font,
+                        fill=shadow_color
                     )
-                    shadow_clip = shadow_clip.with_duration(duration)
-                    shadow_x = text_x + TITLE_CONFIG['shadow_offset']
-                    shadow_y = text_y + TITLE_CONFIG['shadow_offset']
-                    shadow_clip = shadow_clip.with_position((int(shadow_x), int(shadow_y)))
-                    shadow_clip = shadow_clip.with_opacity(TITLE_CONFIG['shadow_opacity'])
-                    shadow_clips.append(shadow_clip)
 
-                # 影とテキストを合成
-                final_clip = CompositeVideoClip(shadow_clips + [title_clip])
+            # メインテキストを描画
+            text_color = TITLE_CONFIG['text_color'] + (255,)  # 完全不透明
+            draw.text(
+                (padding, padding),
+                title_text,
+                font=font,
+                fill=text_color
+            )
+
+            # numpy配列に変換
+            img_array = np.array(img)
+
+            # ImageClipを作成
+            title_clip = ImageClip(img_array, duration=duration)
+
+            # 位置を設定
+            if TITLE_CONFIG['position'] == 'top-left':
+                clip_x = TITLE_CONFIG['margin_left']
+                clip_y = TITLE_CONFIG['margin_top']
+            elif TITLE_CONFIG['position'] == 'top-right':
+                clip_x = 1920 - img_width - TITLE_CONFIG['margin_left']
+                clip_y = TITLE_CONFIG['margin_top']
+            elif TITLE_CONFIG['position'] == 'bottom-left':
+                clip_x = TITLE_CONFIG['margin_left']
+                clip_y = 1080 - img_height - TITLE_CONFIG['margin_top']
+            elif TITLE_CONFIG['position'] == 'bottom-right':
+                clip_x = 1920 - img_width - TITLE_CONFIG['margin_left']
+                clip_y = 1080 - img_height - TITLE_CONFIG['margin_top']
             else:
-                final_clip = title_clip
+                clip_x = TITLE_CONFIG['margin_left']
+                clip_y = TITLE_CONFIG['margin_top']
 
-            print("Title overlay created successfully")
-            return final_clip
+            title_clip = title_clip.with_position((int(clip_x), int(clip_y)))
+
+            print(f"Title clip position: ({clip_x}, {clip_y})")
+            print("Title overlay created successfully with PIL")
+
+            return title_clip
 
         except Exception as e:
             print(f"FATAL ERROR in title overlay creation: {e}")

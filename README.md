@@ -32,3 +32,12 @@ Automated TTS using Google Text-to-Speech
 Subtitle generation
 Video composition with MoviePy
 Se```ries-based content management
+```
+
+
+TTS用に最適化した版を作成します。
+
+"..." → 自然な文章に変更
+"Ha!" → "Haha" または削除
+感嘆符の連続使用を避ける
+不自然な記号を除去
