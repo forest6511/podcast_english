@@ -61,46 +61,42 @@ class VideoGenerator:
         return output_path
 
     def _format_subtitle_text(self, text: str, max_chars_per_line: int = 45) -> str:
-        """長いテキストを適切に改行"""
+        """長いテキストを適切に改行（最大2行）"""
         words = text.split()
-        lines = []
-        current_line = []
+
+        # 短いテキストはそのまま返す
+        if len(text) <= max_chars_per_line:
+            return text
+
+        # 長いテキストは2行に分割
+        # より均等に分割するアルゴリズム
+        total_length = sum(len(word) + 1 for word in words) - 1
+        target_length = total_length // 2
+
+        line1 = []
+        line2 = []
         current_length = 0
 
         for word in words:
-            word_length = len(word) + 1  # スペース分を追加
-
-            if current_length + word_length > max_chars_per_line and current_line:
-                # 現在の行を確定
-                lines.append(' '.join(current_line))
-                current_line = [word]
-                current_length = word_length
+            if current_length < target_length:
+                line1.append(word)
+                current_length += len(word) + 1
             else:
-                current_line.append(word)
-                current_length += word_length
+                line2.append(word)
 
-        # 最後の行を追加
-        if current_line:
-            lines.append(' '.join(current_line))
+        # 行のバランスを調整（必要に応じて）
+        if len(line2) > 0 and len(' '.join(line1)) > max_chars_per_line * 1.5:
+            # line1が長すぎる場合、最後の単語をline2に移動
+            if len(line1) > 1:
+                line2.insert(0, line1.pop())
 
-        # 最大2行に制限
-        if len(lines) > 2:
-            # 2行に収めるために再分割
-            mid_point = len(' '.join(words)) // 2
-            line1 = []
-            line2 = []
-            current_pos = 0
+        result_lines = []
+        if line1:
+            result_lines.append(' '.join(line1))
+        if line2:
+            result_lines.append(' '.join(line2))
 
-            for word in words:
-                if current_pos < mid_point:
-                    line1.append(word)
-                else:
-                    line2.append(word)
-                current_pos += len(word) + 1
-
-            lines = [' '.join(line1), ' '.join(line2)]
-
-        return '\n'.join(lines)
+        return '\n'.join(result_lines)
 
     def _create_rounded_rectangle(self, width: int, height: int, radius: int = 30):
         """角丸の長方形画像を作成"""
@@ -129,7 +125,12 @@ class VideoGenerator:
             line_count = len(formatted_text.split('\n'))
 
             # 行数に応じて背景の高さを調整
-            bg_height = 80 + (line_count * 50)  # 1行80px、2行130px
+            if line_count == 1:
+                bg_height = 100  # 1行の場合は100px（上下均等なパディング）
+            elif line_count == 2:
+                bg_height = 150  # 2行の場合は150px
+            else:  # 3行以上の場合（実際は2行に制限されているはず）
+                bg_height = 150  # 最大2行なので150px
 
             # この字幕用の角丸背景を作成
             rounded_img = self._create_rounded_rectangle(1600, bg_height)
@@ -139,8 +140,8 @@ class VideoGenerator:
             bg_clip = ImageClip(img_array, duration=end-start)
             bg_clip = bg_clip.with_start(start).with_end(end)
 
-            # 背景の位置を調整（行数に応じて）
-            bg_y_position = 890 - (line_count - 1) * 25
+            # 背景は常に同じ位置（画面下部）
+            bg_y_position = 850  # 固定位置
             bg_clip = bg_clip.with_position(('center', bg_y_position))
 
             all_clips.append(bg_clip)
@@ -156,11 +157,17 @@ class VideoGenerator:
                 text_align='center'
             )
 
-            # 時間と位置を設定
+            # 時間を設定
             txt_clip = txt_clip.with_start(start).with_end(end)
 
-            # テキストの位置（背景の中央）
-            txt_y_position = bg_y_position + bg_height // 2 - 20
+            # テキストの位置（背景の真ん中に配置）
+            # 1行の場合: 背景の中央
+            # 2行の場合: 背景の中央から少し上
+            if line_count == 1:
+                txt_y_position = bg_y_position + (bg_height // 2) - 25  # 中央揃え
+            else:
+                txt_y_position = bg_y_position + (bg_height // 2) - 35  # 2行の場合は少し上に
+
             txt_clip = txt_clip.with_position(('center', txt_y_position))
 
             all_clips.append(txt_clip)
