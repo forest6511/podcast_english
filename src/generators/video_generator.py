@@ -167,9 +167,9 @@ class VideoGenerator:
         if current_line:
             lines.append(' '.join(current_line))
 
-        # 最大4行に制限（3行から4行に変更）
-        if len(lines) > 4:
-            lines = lines[:4]
+        # 最大行数制限を6行に拡張するだけ
+        if len(lines) > 6:  # 4から6に変更
+            lines = lines[:6]
 
         return '\n'.join(lines)
 
