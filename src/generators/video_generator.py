@@ -61,42 +61,48 @@ class VideoGenerator:
         return output_path
 
     def _format_subtitle_text(self, text: str, max_chars_per_line: int = 45) -> str:
-        """長いテキストを適切に改行（最大2行）"""
+        """長いテキストを適切に改行（最大3行）"""
         words = text.split()
 
         # 短いテキストはそのまま返す
         if len(text) <= max_chars_per_line:
             return text
 
-        # 長いテキストは2行に分割
-        # より均等に分割するアルゴリズム
-        total_length = sum(len(word) + 1 for word in words) - 1
-        target_length = total_length // 2
-
-        line1 = []
-        line2 = []
+        # 長いテキストを行に分割
+        lines = []
+        current_line = []
         current_length = 0
 
         for word in words:
-            if current_length < target_length:
-                line1.append(word)
-                current_length += len(word) + 1
+            # 単語を追加した場合の長さを計算
+            word_length = len(word)
+            if current_length == 0:
+                new_length = word_length
             else:
-                line2.append(word)
+                new_length = current_length + 1 + word_length  # スペースを含む
 
-        # 行のバランスを調整（必要に応じて）
-        if len(line2) > 0 and len(' '.join(line1)) > max_chars_per_line * 1.5:
-            # line1が長すぎる場合、最後の単語をline2に移動
-            if len(line1) > 1:
-                line2.insert(0, line1.pop())
+            # 行の長さ制限をチェック
+            if new_length <= max_chars_per_line:
+                current_line.append(word)
+                current_length = new_length
+            else:
+                # 現在の行を確定し、新しい行を開始
+                if current_line:
+                    lines.append(' '.join(current_line))
+                current_line = [word]
+                current_length = word_length
 
-        result_lines = []
-        if line1:
-            result_lines.append(' '.join(line1))
-        if line2:
-            result_lines.append(' '.join(line2))
+        # 最後の行を追加
+        if current_line:
+            lines.append(' '.join(current_line))
 
-        return '\n'.join(result_lines)
+        # 最大3行に制限
+        if len(lines) > 3:
+            # 3行を超える場合は最初の3行のみ使用し、最後の行に省略記号を追加
+            lines = lines[:3]
+            lines[2] = lines[2] + '...'
+
+        return '\n'.join(lines)
 
     def _create_rounded_rectangle(self, width: int, height: int, radius: int = 30):
         """角丸の長方形画像を作成"""
@@ -126,11 +132,11 @@ class VideoGenerator:
 
             # 行数に応じて背景の高さを調整
             if line_count == 1:
-                bg_height = 100  # 1行の場合は100px（上下均等なパディング）
+                bg_height = 100  # 1行の場合
             elif line_count == 2:
-                bg_height = 150  # 2行の場合は150px
-            else:  # 3行以上の場合（実際は2行に制限されているはず）
-                bg_height = 150  # 最大2行なので150px
+                bg_height = 150  # 2行の場合
+            else:  # 3行以上の場合
+                bg_height = 200  # 3行の場合は200px
 
             # この字幕用の角丸背景を作成
             rounded_img = self._create_rounded_rectangle(1600, bg_height)
@@ -140,8 +146,8 @@ class VideoGenerator:
             bg_clip = ImageClip(img_array, duration=end-start)
             bg_clip = bg_clip.with_start(start).with_end(end)
 
-            # 背景は常に同じ位置（画面下部）
-            bg_y_position = 850  # 固定位置
+            # 背景の位置を上に移動（画面下部から少し上）
+            bg_y_position = 750  # 850から750に変更（100px上に）
             bg_clip = bg_clip.with_position(('center', bg_y_position))
 
             all_clips.append(bg_clip)
@@ -161,12 +167,12 @@ class VideoGenerator:
             txt_clip = txt_clip.with_start(start).with_end(end)
 
             # テキストの位置（背景の真ん中に配置）
-            # 1行の場合: 背景の中央
-            # 2行の場合: 背景の中央から少し上
             if line_count == 1:
                 txt_y_position = bg_y_position + (bg_height // 2) - 25  # 中央揃え
-            else:
-                txt_y_position = bg_y_position + (bg_height // 2) - 35  # 2行の場合は少し上に
+            elif line_count == 2:
+                txt_y_position = bg_y_position + (bg_height // 2) - 35  # 2行の場合
+            else:  # 3行以上
+                txt_y_position = bg_y_position + (bg_height // 2) - 45  # 3行の場合は少し上に
 
             txt_clip = txt_clip.with_position(('center', txt_y_position))
 
