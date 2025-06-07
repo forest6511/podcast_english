@@ -1,0 +1,66 @@
+{
+  "series_info": {
+    "id": "001",
+    "title": "A Day in My Life",
+    "subtitle": "Let's Practice English Listening Together",
+    "description": "Learn everyday English through natural conversations",
+    "target_level": "beginner",
+    "status": "active"
+  },
+  "settings": {
+    "tts_engine": "google-cloud",
+    "speaking_speed": 0.9,
+    "pause_between_lines": 0.6,
+    "background_image": "assets/backgrounds/podcast_bg.jpg",
+    "voices": {
+      "mike": {
+        "name": "en-US-Standard-D"
+      },
+      "sarah": {
+        "name": "en-US-Standard-F"
+      }
+    }
+  },
+  "episodes": [
+    {
+      "id": "001",
+      "title": "Morning Routine",
+      "description": "Learn morning vocabulary and phrases",
+      "duration_estimate": 180,
+      "conversations": [
+        {
+          "speaker": "mike",
+          "text": "Good morning, everyone! I'm Mike."
+        },
+        {
+          "speaker": "sarah",
+          "text": "Hi! I'm Sarah. Welcome to our podcast!"
+        },
+        {
+          "speaker": "mike",
+          "text": "Today, we're going to talk about morning routines and how to start your day in a positive way."
+        },
+        {
+          "speaker": "sarah",
+          "text": "That's right! A good morning routine can make a huge difference in your productivity and happiness throughout the day."
+        },
+        {
+          "speaker": "mike",
+          "text": "Sarah, what time do you wake up?"
+        },
+        {
+          "speaker": "sarah",
+          "text": "I usually wake up at seven o'clock, but sometimes I try to wake up even earlier to have more quiet time."
+        },
+        {
+          "speaker": "mike",
+          "text": "Seven o'clock? That's early!"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Yes, it's early. What about you? Do you have any special morning habits that help you start your day?"
+        }
+      ]
+    }
+  ]
+}
