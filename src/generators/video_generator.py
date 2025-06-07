@@ -282,17 +282,20 @@ class VideoGenerator:
 
         # カスタマイズ可能な設定
         TITLE_CONFIG = {
-            'font_size':52,
+            'font_size': 62,
             'text_color': 'white',
-            'margin_top': 69,          # 上マージン
-            'margin_left': 40,         # 左マージン
-            'position': 'top-left',    # 'top-left', 'top-right', 'bottom-left', 'bottom-right'
-            'text_shadow': True,       # テキストに影をつけるかどうか
-            'shadow_offset': 2,        # 影のオフセット
-            'shadow_color': 'black',   # 影の色
-            'use_background': False,   # 背景を使用するかどうか
-            'background_color': (0, 0, 0, 180),  # 半透明の黒背景
-            'background_padding': 20   # 背景のパディング
+            'margin_top': 74,
+            'margin_left': 40,
+            'position': 'top-left',
+            'text_shadow': True,
+            'shadow_style': 'thick',     # 'normal', 'thick'
+            'shadow_offset': 2,
+            'shadow_thickness': 3,       # 太い影の厚さ
+            'shadow_color': 'black',
+            'shadow_opacity': 0.7,
+            'use_background': False,
+            'background_color': (0, 0, 0, 180),
+            'background_padding': 20
         }
 
         try:
@@ -307,28 +310,6 @@ class VideoGenerator:
                 title_text = "Untitled Series"
                 print("Using fallback title: Untitled Series")
 
-            # 長いタイトルの場合は改行
-            if len(title_text) > 25:
-                words = title_text.split()
-                lines = []
-                current_line = []
-                current_length = 0
-
-                for word in words:
-                    if current_length + len(word) + 1 <= 25:
-                        current_line.append(word)
-                        current_length += len(word) + 1
-                    else:
-                        if current_line:
-                            lines.append(' '.join(current_line))
-                        current_line = [word]
-                        current_length = len(word)
-
-                if current_line:
-                    lines.append(' '.join(current_line))
-
-                title_text = '\n'.join(lines[:2])  # 最大2行
-
             print(f"Final title text: {repr(title_text)}")
 
             # タイトルクリップを作成
@@ -340,6 +321,7 @@ class VideoGenerator:
             ]
 
             title_clip = None
+            selected_font = None
             for font in title_fonts:
                 try:
                     title_clip = TextClip(
@@ -352,6 +334,7 @@ class VideoGenerator:
                     )
                     print(f"Successfully using font: {font}")
                     print(f"Title clip size: {title_clip.size}")
+                    selected_font = font
                     break
                 except Exception as e:
                     print(f"Font {font} failed: {e}")
@@ -402,45 +385,55 @@ class VideoGenerator:
             # タイトルテキストの位置を設定
             title_clip = title_clip.with_position((int(text_x), int(text_y)))
 
-            # 影付きテキストを作成（CompositeVideoClipを使わない）
+            # 影付きテキストを作成
             if TITLE_CONFIG['text_shadow']:
-                # 影のテキストを作成
-                shadow_clip = None
-                for font in title_fonts:
-                    try:
+                shadow_clips = []
+
+                if TITLE_CONFIG['shadow_style'] == 'thick':
+                    # 太い影：複数の影を少しずつずらして重ねる
+                    thickness = TITLE_CONFIG['shadow_thickness']
+                    base_opacity = TITLE_CONFIG['shadow_opacity']
+
+                    # 影を配置（近くに太く）
+                    for i in range(1, thickness + 1):
+                        # 右下方向に段階的に配置
                         shadow_clip = TextClip(
                             text=title_text,
                             font_size=TITLE_CONFIG['font_size'],
-                            font=font,
+                            font=selected_font if selected_font else None,
                             color=TITLE_CONFIG['shadow_color'],
                             method='label',
                             text_align='left'
                         )
-                        break
-                    except:
-                        continue
+                        shadow_clip = shadow_clip.with_duration(duration)
+                        shadow_x = text_x + i
+                        shadow_y = text_y + i
+                        shadow_clip = shadow_clip.with_position((int(shadow_x), int(shadow_y)))
+                        # 外側ほど薄くする
+                        opacity = base_opacity * (1 - (i / (thickness * 2)))
+                        shadow_clip = shadow_clip.with_opacity(opacity)
+                        shadow_clips.append(shadow_clip)
 
-                if shadow_clip is None:
+                else:  # normal
+                    # 通常の影：1つだけ
                     shadow_clip = TextClip(
                         text=title_text,
                         font_size=TITLE_CONFIG['font_size'],
+                        font=selected_font if selected_font else None,
                         color=TITLE_CONFIG['shadow_color'],
                         method='label',
                         text_align='left'
                     )
-
-                shadow_clip = shadow_clip.with_duration(duration)
-                shadow_x = text_x + TITLE_CONFIG['shadow_offset']
-                shadow_y = text_y + TITLE_CONFIG['shadow_offset']
-                shadow_clip = shadow_clip.with_position((int(shadow_x), int(shadow_y)))
-
-                # 半透明の黒い影を作成（より自然な影）
-                shadow_clip = shadow_clip.with_opacity(0.5)
+                    shadow_clip = shadow_clip.with_duration(duration)
+                    shadow_x = text_x + TITLE_CONFIG['shadow_offset']
+                    shadow_y = text_y + TITLE_CONFIG['shadow_offset']
+                    shadow_clip = shadow_clip.with_position((int(shadow_x), int(shadow_y)))
+                    shadow_clip = shadow_clip.with_opacity(TITLE_CONFIG['shadow_opacity'])
+                    shadow_clips.append(shadow_clip)
 
                 # 影とテキストを合成
-                final_clip = CompositeVideoClip([shadow_clip, title_clip])
+                final_clip = CompositeVideoClip(shadow_clips + [title_clip])
             else:
-                # 影なしの場合は単純にタイトルクリップを返す
                 final_clip = title_clip
 
             print("Title overlay created successfully")
