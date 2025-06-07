@@ -60,7 +60,7 @@ class VideoGenerator:
         print(f"Video saved to: {output_path}")
         return output_path
 
-    def _format_subtitle_text(self, text: str, max_chars_per_line: int = 45) -> str:
+    def _format_subtitle_text(self, text: str, max_chars_per_line: int = 35) -> str:
         """長いテキストを適切に改行（最大3行）"""
         words = text.split()
 
@@ -98,9 +98,8 @@ class VideoGenerator:
 
         # 最大3行に制限
         if len(lines) > 3:
-            # 3行を超える場合は最初の3行のみ使用し、最後の行に省略記号を追加
+            # 3行を超える場合は最初の3行のみ使用
             lines = lines[:3]
-            lines[2] = lines[2] + '...'
 
         return '\n'.join(lines)
 
@@ -146,8 +145,8 @@ class VideoGenerator:
             bg_clip = ImageClip(img_array, duration=end-start)
             bg_clip = bg_clip.with_start(start).with_end(end)
 
-            # 背景の位置を上に移動（画面下部から少し上）
-            bg_y_position = 750  # 850から750に変更（100px上に）
+            # 背景の位置
+            bg_y_position = 750
             bg_clip = bg_clip.with_position(('center', bg_y_position))
 
             all_clips.append(bg_clip)
@@ -166,13 +165,15 @@ class VideoGenerator:
             # 時間を設定
             txt_clip = txt_clip.with_start(start).with_end(end)
 
-            # テキストの位置（背景の真ん中に配置）
+            # テキストの位置（背景の真ん中により正確に配置）
+            bg_center_y = bg_y_position + (bg_height // 2)
+
             if line_count == 1:
-                txt_y_position = bg_y_position + (bg_height // 2) - 25  # 中央揃え
+                txt_y_position = bg_center_y - 36  # フォントサイズの半分
             elif line_count == 2:
-                txt_y_position = bg_y_position + (bg_height // 2) - 35  # 2行の場合
+                txt_y_position = bg_center_y - 45  # 2行の場合
             else:  # 3行以上
-                txt_y_position = bg_y_position + (bg_height // 2) - 45  # 3行の場合は少し上に
+                txt_y_position = bg_center_y - 55  # 3行の場合
 
             txt_clip = txt_clip.with_position(('center', txt_y_position))
 
