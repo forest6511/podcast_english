@@ -43,22 +43,6 @@
         {
           "speaker": "sarah",
           "text": "That's right! A good morning routine can make a huge difference in your productivity and happiness throughout the day."
-        },
-        {
-          "speaker": "mike",
-          "text": "Sarah, what time do you wake up?"
-        },
-        {
-          "speaker": "sarah",
-          "text": "I usually wake up at seven o'clock, but sometimes I try to wake up even earlier to have more quiet time."
-        },
-        {
-          "speaker": "mike",
-          "text": "Seven o'clock? That's early!"
-        },
-        {
-          "speaker": "sarah",
-          "text": "Yes, it's early. What about you? Do you have any special morning habits that help you start your day?"
         }
       ]
     }
