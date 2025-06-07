@@ -15,20 +15,21 @@ class Conversation(BaseModel):
     speaker: str
     text: str
 
-class Episode(BaseModel):
-    id: str
-    title: str
-    description: str
-    duration_estimate: int
-    conversations: List[Conversation]
-
-class SeriesInfo(BaseModel):
+class SeriesInfo(BaseModel):  # Episode の前に定義
     id: str
     title: str
     subtitle: str
     description: str
     target_level: str
     status: str
+
+class Episode(BaseModel):
+    id: str
+    title: str
+    description: str
+    duration_estimate: int
+    conversations: List[Conversation]
+    series_info: Optional[SeriesInfo] = None  # SeriesInfo を参照
 
 class Series(BaseModel):
     series_info: SeriesInfo

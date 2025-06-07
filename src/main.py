@@ -45,6 +45,9 @@ def main(series, episode, keep_existing):
     subtitle_gen = SubtitleGenerator(series_data.settings, pm)
     video_gen = VideoGenerator(series_data.settings, pm)
 
+    # シリーズタイトルを取得 ← 追加
+    series_title = series_data.series_info.title
+
     # エピソードを処理
     episodes_to_process = series_data.episodes
     if episode:
@@ -62,9 +65,9 @@ def main(series, episode, keep_existing):
             console.print("2. Generating subtitles...")
             subtitle_path = subtitle_gen.generate_subtitles(ep, audio_path)
 
-            # 動画生成
+            # 動画生成 ← series_titleを追加
             console.print("3. Generating video...")
-            video_path = video_gen.generate_video(ep, audio_path, subtitle_path)
+            video_path = video_gen.generate_video(ep, audio_path, subtitle_path, series_title)
 
             console.print(f"[bold green]✓ Complete: {video_path}[/bold green]")
 
