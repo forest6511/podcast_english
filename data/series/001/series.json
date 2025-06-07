@@ -26,23 +26,287 @@
       "id": "001",
       "title": "Morning Routine",
       "description": "Learn morning vocabulary and phrases",
-      "duration_estimate": 180,
+      "duration_estimate": 1800,
       "conversations": [
         {
           "speaker": "mike",
-          "text": "Good morning, everyone! I'm Mike."
+          "text": "Good morning, everyone! I'm Mike.",
+          "jp_text": "おはようございます、みなさん！マイクです。"
         },
         {
           "speaker": "sarah",
-          "text": "Hi! I'm Sarah. Welcome to our podcast!"
+          "text": "Hi! I'm Sarah. Welcome to our podcast!",
+          "jp_text": "こんにちは！サラです。私たちのポッドキャストへようこそ！"
         },
         {
           "speaker": "mike",
-          "text": "Today, we're going to talk about morning routines and how to start your day in a positive way."
+          "text": "Today, we're going to talk about morning routines and how to start your day in a positive way.",
+          "jp_text": "今日は、朝の習慣と、一日をポジティブに始める方法について話します。"
         },
         {
           "speaker": "sarah",
-          "text": "That's right! A good morning routine can make a huge difference in your productivity and happiness throughout the day."
+          "text": "That's right! A good morning routine can make a huge difference in your productivity and happiness throughout the day.",
+          "jp_text": "その通り！良い朝の習慣は、一日を通しての生産性と幸福感に大きな違いをもたらします。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Before we start, Sarah, I have to tell you something funny that happened this morning.",
+          "jp_text": "始める前に、サラ、今朝起きた面白いことを話さなきゃ。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Oh, what happened?",
+          "jp_text": "あら、何があったの？"
+        },
+        {
+          "speaker": "mike",
+          "text": "Well, I set three alarms on my phone, and I still almost overslept!",
+          "jp_text": "えっと、携帯に3つもアラームをセットしたのに、それでも寝過ごしそうになったんだ！"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Three alarms? That's a lot! I usually just need one.",
+          "jp_text": "3つもアラーム？それは多いね！私は普通1つで十分よ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "I know, I know. But I'm terrible at waking up. The first alarm is at 6:30, then 6:45, and finally 7:00.",
+          "jp_text": "分かってる、分かってる。でも僕は起きるのが本当に苦手なんだ。最初のアラームは6時30分、次が6時45分、最後が7時。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "And you still almost overslept? What time did you actually get up?",
+          "jp_text": "それでも寝過ごしそうになったの？実際何時に起きたの？"
+        },
+        {
+          "speaker": "mike",
+          "text": "7:15! I kept hitting the snooze button. It's a bad habit.",
+          "jp_text": "7時15分！スヌーズボタンを押し続けちゃったんだ。悪い習慣だよね。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "We all have those days. Actually, let's talk about this. What time do you usually wake up?",
+          "jp_text": "みんなそういう日はあるわ。実際、このことについて話しましょう。普段は何時に起きるの？"
+        },
+        {
+          "speaker": "mike",
+          "text": "On a normal day, I try to wake up at 7:00. But honestly, it's more like 7:30 by the time I actually get out of bed.",
+          "jp_text": "普通の日は7時に起きようとするんだ。でも正直、実際にベッドから出るのは7時30分くらいになっちゃう。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "I understand. I'm more of a morning person. I usually wake up at 6:00 without an alarm.",
+          "jp_text": "分かるわ。私はどちらかというと朝型人間なの。普段は目覚まし時計なしで6時に起きるわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Without an alarm? That's impressive! How do you do that?",
+          "jp_text": "目覚ましなしで？すごいね！どうやってるの？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "I think it's just my body clock. I've been waking up at the same time for years. But I also go to bed early, around 10 PM.",
+          "jp_text": "体内時計だと思うわ。何年も同じ時間に起きているから。でも、夜10時頃には寝るようにしてるの。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Ah, that explains it. I'm usually up until midnight watching Netflix or scrolling through my phone.",
+          "jp_text": "ああ、それで納得。僕は普通、真夜中までNetflixを見たり、携帯をスクロールしたりしてるんだ。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "That might be why you need three alarms! Sleep is so important for a good morning routine.",
+          "jp_text": "それが3つもアラームが必要な理由かもね！良い朝の習慣には睡眠がとても大切よ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "You're absolutely right. So, after you wake up at 6:00, what's the first thing you do?",
+          "jp_text": "全くその通りだね。それで、6時に起きた後、最初に何をするの？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "The very first thing? I stretch in bed for a minute. It helps me feel more awake. Then I drink a glass of water.",
+          "jp_text": "一番最初？ベッドで1分間ストレッチをするの。目が覚める感じがするわ。それからコップ一杯の水を飲むの。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Water? Not coffee?",
+          "jp_text": "水？コーヒーじゃなくて？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Water first, coffee later! I read that drinking water in the morning is good for your body after not drinking anything all night.",
+          "jp_text": "最初に水、コーヒーは後！朝に水を飲むのは、一晩何も飲まなかった後の体に良いって読んだの。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That makes sense. I should try that. I usually go straight for the coffee machine.",
+          "jp_text": "なるほどね。試してみようかな。僕はいつも真っ直ぐコーヒーメーカーに向かうんだ。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Nothing wrong with coffee! I have my cup after I shower. Speaking of which, are you a morning shower or evening shower person?",
+          "jp_text": "コーヒーも悪くないわ！私はシャワーの後に飲むの。そういえば、あなたは朝シャワー派？それとも夜シャワー派？"
+        },
+        {
+          "speaker": "mike",
+          "text": "Definitely morning shower. I can't wake up without it. The hot water is like magic for my sleepy brain.",
+          "jp_text": "間違いなく朝シャワー派だね。それなしでは起きられないんだ。熱いお湯は眠い頭には魔法みたいなものだよ。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Same here! How long do you usually shower?",
+          "jp_text": "私も同じ！普段どのくらいシャワーを浴びるの？"
+        },
+        {
+          "speaker": "mike",
+          "text": "Probably too long. Maybe 15 or 20 minutes. I do my best thinking in the shower.",
+          "jp_text": "たぶん長すぎるかな。15分か20分くらい。シャワーで一番よく考え事をするんだ。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "That's quite long! I try to keep mine to 10 minutes. I'm always worried about being late.",
+          "jp_text": "それは結構長いわね！私は10分以内にするようにしてるの。いつも遅刻が心配で。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Yeah, I should probably be quicker. After your shower, what's your routine?",
+          "jp_text": "うん、もっと早くすべきだよね。シャワーの後、どんなルーティンなの？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Well, I dry my hair, put on some light makeup, and get dressed. The whole process takes about 30 minutes.",
+          "jp_text": "えっと、髪を乾かして、軽くメイクして、服を着るの。全部で30分くらいかかるわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That's efficient! It takes me about 20 minutes to get ready after my shower. No makeup for me, obviously, but I do spend time on my hair.",
+          "jp_text": "効率的だね！僕はシャワーの後、準備に20分くらいかかる。もちろんメイクはしないけど、髪には時間をかけるんだ。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Your hair always looks good! Do you use any special products?",
+          "jp_text": "あなたの髪はいつも素敵よ！何か特別な製品を使ってるの？"
+        },
+        {
+          "speaker": "mike",
+          "text": "Just some hair wax. Nothing fancy. Now, let's talk about breakfast. That's my favorite part of the morning!",
+          "jp_text": "ヘアワックスだけだよ。特別なものじゃない。さて、朝食について話そう。朝の一番好きな時間なんだ！"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Mine too! What's your go-to breakfast?",
+          "jp_text": "私もよ！あなたの定番の朝食は何？"
+        },
+        {
+          "speaker": "mike",
+          "text": "It depends on how much time I have. On busy days, it's cereal or toast. But when I have time, I love making eggs and bacon.",
+          "jp_text": "時間がどれくらいあるかによるね。忙しい日はシリアルかトースト。でも時間がある時は、卵とベーコンを作るのが大好きなんだ。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Eggs and bacon sound delicious but heavy. I usually have yogurt with granola and fruit.",
+          "jp_text": "卵とベーコンは美味しそうだけど重いわね。私は普段、ヨーグルトにグラノーラとフルーツを入れて食べるの。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That's much healthier than my breakfast! What kind of fruit do you add?",
+          "jp_text": "それは僕の朝食よりずっと健康的だね！どんなフルーツを入れるの？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Usually berries - strawberries, blueberries, whatever is in season. Sometimes I add a sliced banana.",
+          "jp_text": "普段はベリー類 - イチゴ、ブルーベリー、旬のものなら何でも。時々、スライスしたバナナも入れるわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Sounds nutritious. Do you prepare it the night before?",
+          "jp_text": "栄養たっぷりだね。前の晩に準備するの？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Sometimes I do overnight oats. Have you tried those?",
+          "jp_text": "時々オーバーナイトオーツを作るわ。試したことある？"
+        },
+        {
+          "speaker": "mike",
+          "text": "I've heard of them but never tried making them. How do you do it?",
+          "jp_text": "聞いたことはあるけど、作ったことはないな。どうやって作るの？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "It's super easy! You mix oats with milk or yogurt, add some honey, and leave it in the fridge overnight. In the morning, you just add toppings.",
+          "jp_text": "すごく簡単よ！オーツを牛乳かヨーグルトと混ぜて、蜂蜜を加えて、一晩冷蔵庫に入れておくの。朝はトッピングを加えるだけ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That sounds convenient. I might try that. It would save time in the morning.",
+          "jp_text": "便利そうだね。試してみようかな。朝の時間を節約できるね。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Exactly! Time-saving is key. Do you eat breakfast at home or on the go?",
+          "jp_text": "その通り！時間節約が鍵よ。朝食は家で食べる？それとも移動中？"
+        },
+        {
+          "speaker": "mike",
+          "text": "Always at home. I like to sit down and enjoy my food. Plus, I check emails and news while eating.",
+          "jp_text": "いつも家で食べるよ。座ってゆっくり食事を楽しむのが好きなんだ。それに、食べながらメールやニュースをチェックするし。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Me too. It's nice to have that quiet time before the busy day starts.",
+          "jp_text": "私もよ。忙しい一日が始まる前の静かな時間っていいわよね。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Absolutely. Do you have any other morning habits?",
+          "jp_text": "本当にそうだね。他に朝の習慣はある？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "I like to make a to-do list for the day. It helps me feel organized.",
+          "jp_text": "その日のやることリストを作るのが好きなの。整理された気分になるわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That's a great habit. I should do that more often. I usually just try to remember everything.",
+          "jp_text": "それは素晴らしい習慣だね。僕ももっとやるべきだな。普段は全部覚えようとするだけなんだ。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Writing things down really helps. Even if it's just three main tasks for the day.",
+          "jp_text": "書き出すことは本当に役立つわ。その日の主要な3つのタスクだけでも。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Good advice. Well, I think we've covered a lot about morning routines today.",
+          "jp_text": "いいアドバイスだね。今日は朝の習慣についてたくさん話したと思う。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "We have! Remember, everyone's routine is different. The important thing is to find what works for you.",
+          "jp_text": "そうね！みんなのルーティンは違うことを覚えておいて。大切なのは自分に合うものを見つけることよ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Exactly. And maybe try to go to bed a little earlier, right?",
+          "jp_text": "その通り。そして、もう少し早く寝るようにすることかな？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Definitely! Good sleep makes everything easier.",
+          "jp_text": "絶対に！良い睡眠はすべてを楽にするわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Thank you all for listening to our podcast today!",
+          "jp_text": "今日は私たちのポッドキャストを聞いてくれてありがとう！"
+        },
+        {
+          "speaker": "sarah",
+          "text": "See you next time! Have a wonderful morning, everyone!",
+          "jp_text": "また次回！みなさん、素敵な朝を過ごしてね！"
         }
       ]
     }
