@@ -1,0 +1,454 @@
+{
+  "series_info": {
+    "id": "002",
+    "title": "Real Life English Survival",
+    "subtitle": "Master Essential Conversations for Living Abroad",
+    "description": "Learn practical English for everyday situations through engaging conversations",
+    "target_level": "beginner-intermediate",
+    "status": "active"
+  },
+  "settings": {
+    "tts_engine": "google-cloud",
+    "speaking_speed": 0.8,
+    "pause_between_lines": 0.6,
+    "background_image": "assets/backgrounds/podcast_bg.jpg",
+    "voices": {
+      "mike": {
+        "name": "en-US-Standard-D"
+      },
+      "sarah": {
+        "name": "en-US-Standard-F"
+      }
+    }
+  },
+  "episodes": [
+    {
+      "id": "002",
+      "title": "Emergency English - When Things Go Wrong",
+      "description": "Essential phrases for medical emergencies, lost items, and getting help",
+      "duration_estimate": 1200,
+      "conversations": [
+        {
+          "speaker": "mike",
+          "text": "Hey Sarah, I heard you had quite an adventure last week. Are you feeling better now?",
+          "jp_text": "やあサラ、先週は大変だったって聞いたよ。もう気分は良くなった？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Much better, thanks. But it was scary. I had to go to the emergency room at midnight with severe stomach pain.",
+          "jp_text": "ずっと良くなったわ、ありがとう。でも怖かった。真夜中にひどい腹痛で救急外来に行かなきゃいけなかったの。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Oh no. How did you even explain your symptoms? Medical terms can be so difficult.",
+          "jp_text": "大変だったね。症状をどうやって説明したの？医学用語ってとても難しいよね。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "I know. At first, I just kept saying my stomach hurts, but the nurse needed more specific information.",
+          "jp_text": "そうなの。最初は「お腹が痛い」って言い続けてたけど、看護師さんはもっと具体的な情報が必要だったの。"
+        },
+        {
+          "speaker": "mike",
+          "text": "What kind of questions did they ask?",
+          "jp_text": "どんな質問をされたの？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "They asked about the pain scale. You know, from one to ten, how bad is the pain? I said eight because it was really severe.",
+          "jp_text": "痛みの段階について聞かれたわ。1から10で、どのくらい痛いかって。本当にひどかったから8って答えたの。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That's a useful system. What else did they need to know?",
+          "jp_text": "便利なシステムだね。他に何を知る必要があったの？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "They asked if the pain was sharp, dull, or cramping. I learned that sharp means like a knife, dull is a constant ache, and cramping comes and goes.",
+          "jp_text": "痛みが鋭いか、鈍いか、けいれん性かって聞かれたの。鋭いはナイフのような痛み、鈍いは持続的な痛み、けいれん性は痛みが来たり去ったりすることを学んだわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Those are important distinctions. Did they ask about other symptoms too?",
+          "jp_text": "重要な区別だね。他の症状についても聞かれた？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Yes, they asked if I had nausea, vomiting, fever, or diarrhea. I had to look up some of these words on my phone while I was there.",
+          "jp_text": "ええ、吐き気、嘔吐、発熱、下痢があるかって聞かれたの。そこにいる間に携帯でいくつかの単語を調べなきゃいけなかったわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That must have been stressful. Did they do any tests?",
+          "jp_text": "それはストレスだったでしょうね。何か検査はした？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "They did blood work and an ultrasound. The doctor explained everything clearly, but I had to ask him to speak slowly.",
+          "jp_text": "血液検査と超音波検査をしたわ。医師は全てをはっきり説明してくれたけど、ゆっくり話してもらうようお願いしなきゃいけなかった。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That's a good strategy. What was the diagnosis?",
+          "jp_text": "それは良い方法だね。診断は何だった？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Food poisoning. They gave me medication and told me to stay hydrated. The phrase they used was drink plenty of fluids.",
+          "jp_text": "食中毒だったの。薬をもらって、水分補給をするように言われたわ。「たくさん水分を摂って」って表現を使ってた。"
+        },
+        {
+          "speaker": "mike",
+          "text": "I'm glad it wasn't anything more serious. Speaking of emergencies, remember when I lost my wallet in London?",
+          "jp_text": "もっと深刻なものじゃなくて良かった。緊急事態といえば、ロンドンで財布をなくした時のこと覚えてる？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Oh right, that was during your business trip. What happened exactly?",
+          "jp_text": "そうだった、出張中だったよね。正確には何があったの？"
+        },
+        {
+          "speaker": "mike",
+          "text": "I think someone pickpocketed me on the tube. One moment I had my wallet, the next it was gone.",
+          "jp_text": "地下鉄でスリに遭ったと思うんだ。さっきまで財布があったのに、次の瞬間にはなくなってた。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "That's terrible. Did you report it to the police?",
+          "jp_text": "ひどいわね。警察に届け出た？"
+        },
+        {
+          "speaker": "mike",
+          "text": "I did, but first I had to find a police station. I asked a local where the nearest police station is, and thankfully they spoke English.",
+          "jp_text": "届け出たよ、でもまず警察署を見つけなきゃいけなかった。地元の人に「最寄りの警察署はどこですか」って聞いて、幸い英語を話してくれたんだ。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "What was the process like at the police station?",
+          "jp_text": "警察署での手続きはどんな感じだった？"
+        },
+        {
+          "speaker": "mike",
+          "text": "They asked me to file a report. I had to describe what happened, when and where it occurred, and list everything that was in my wallet.",
+          "jp_text": "届け出を提出するように言われたよ。何が起きたか、いつどこで起きたか説明して、財布の中身を全部リストアップしなきゃいけなかった。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Did you remember everything that was in it?",
+          "jp_text": "中身は全部覚えてた？"
+        },
+        {
+          "speaker": "mike",
+          "text": "Mostly. Credit cards, driver's license, about fifty pounds in cash. They gave me a crime reference number for insurance purposes.",
+          "jp_text": "ほとんどね。クレジットカード、運転免許証、現金で約50ポンド。保険用に犯罪参照番号をもらったよ。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "That's important. Did you have to cancel your cards right away?",
+          "jp_text": "それは重要ね。すぐにカードをキャンセルしなきゃいけなかった？"
+        },
+        {
+          "speaker": "mike",
+          "text": "Yes, immediately. I called the bank's emergency hotline. The phrase I used was I need to report a stolen credit card.",
+          "jp_text": "うん、すぐに。銀行の緊急ホットラインに電話したよ。「盗まれたクレジットカードを報告したい」って言ったんだ。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Good thinking. How did you manage without any money or cards?",
+          "jp_text": "賢明な判断ね。お金もカードもなくてどうやって過ごしたの？"
+        },
+        {
+          "speaker": "mike",
+          "text": "Luckily, I had my phone with digital payment apps. But I also had to go to the bank to get emergency cash.",
+          "jp_text": "幸い、携帯にデジタル決済アプリがあったんだ。でも緊急用の現金を得るために銀行にも行かなきゃいけなかった。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "That reminds me of when I had to open a bank account here. The terminology was so confusing at first.",
+          "jp_text": "それで思い出したけど、こっちで銀行口座を開設した時のこと。最初は用語がとても混乱したわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Oh, I remember that struggle. What was the most confusing part?",
+          "jp_text": "その苦労は覚えてるよ。一番混乱したのは何だった？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "They kept asking if I wanted a checking or savings account. I didn't know checking account meant current account.",
+          "jp_text": "チェッキングアカウントかセービングスアカウントかずっと聞かれたの。チェッキングアカウントが当座預金口座を意味するって知らなかったわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Right, the terminology is different in each country. What documents did you need?",
+          "jp_text": "そうだね、国によって用語が違うんだ。どんな書類が必要だった？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Proof of address was the tricky one. They wanted a utility bill or rental agreement. I had to ask my landlord for a letter.",
+          "jp_text": "住所証明が難しかったわ。公共料金の請求書か賃貸契約書が必要だったの。大家さんに手紙を書いてもらわなきゃいけなかった。"
+        },
+        {
+          "speaker": "mike",
+          "text": "And they always need proof of identity too, right?",
+          "jp_text": "それに身分証明書も必要だよね？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Yes, passport and visa. They also asked about my employment status and income. I learned to say I'm employed full-time.",
+          "jp_text": "ええ、パスポートとビザね。雇用状況と収入についても聞かれたわ。「フルタイムで雇用されています」って言うことを学んだの。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Did they explain all the fees clearly?",
+          "jp_text": "手数料について明確に説明してくれた？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "They tried, but I had to ask them to clarify. Monthly maintenance fee, overdraft fee, ATM fee. So many fees to understand.",
+          "jp_text": "説明しようとしてくれたけど、明確にしてもらうよう頼まなきゃいけなかった。月次維持手数料、当座貸越手数料、ATM手数料。理解すべき手数料がたくさんあったわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Banking vocabulary is definitely specialized. Have you had to deal with any other services recently?",
+          "jp_text": "銀行の語彙は確かに専門的だね。最近他のサービスで何か対処しなきゃいけないことあった？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Actually, yes. I had to call tech support last week because my internet wasn't working.",
+          "jp_text": "実はあったの。先週インターネットが動かなくてテクニカルサポートに電話しなきゃいけなかったわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Oh, that can be frustrating. How did that conversation go?",
+          "jp_text": "それはイライラするよね。その会話はどうだった？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "First, they asked me to describe the problem. I said my internet connection keeps dropping or the WiFi is unstable.",
+          "jp_text": "まず、問題を説明するよう求められたの。「インターネット接続が途切れ続ける」とか「WiFiが不安定」って言ったわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Did they make you do all those troubleshooting steps?",
+          "jp_text": "トラブルシューティングの手順を全部やらされた？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Of course. Have you tried turning it off and on again? It's always the first question. Then they asked me to unplug the router for thirty seconds.",
+          "jp_text": "もちろん。「電源を切って入れ直してみましたか」っていつも最初の質問よね。それからルーターを30秒間抜くように言われたわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "The classic solutions. Did that fix it?",
+          "jp_text": "定番の解決策だね。それで直った？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "No, so they had to escalate the issue. They scheduled a technician to come to my apartment.",
+          "jp_text": "いいえ、だから問題をエスカレートしなきゃいけなかったの。技術者がアパートに来るよう予約してくれたわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That's good. When dealing with appointments, I always confirm the date and time window.",
+          "jp_text": "それは良かった。予約を扱う時は、いつも日付と時間帯を確認するようにしてるよ。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Yes, they said between two and four PM on Thursday. I made sure to ask, do I need to be home during that time?",
+          "jp_text": "ええ、木曜日の午後2時から4時の間って言われたわ。「その時間帯に家にいる必要がありますか」って必ず聞いたの。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Smart question. These practical situations really test our English skills, don't they?",
+          "jp_text": "賢い質問だね。こういう実用的な状況って本当に英語力が試されるよね。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Absolutely. But each experience makes us more confident. The key is learning the specific vocabulary for each situation.",
+          "jp_text": "その通りよ。でも経験するたびに自信がつくわ。鍵は各状況に特有の語彙を学ぶことね。"
+        },
+        {
+          "speaker": "mike",
+          "text": "And not being afraid to ask for clarification. Can you repeat that please or could you speak more slowly are lifesavers.",
+          "jp_text": "それに説明を求めることを恐れないこと。「もう一度言ってもらえますか」や「もっとゆっくり話してもらえますか」は命の恩人だよ。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Exactly. Also, I've learned to summarize what I understood. So you're saying that I need to do X, right?",
+          "jp_text": "その通り。それに理解したことを要約することも学んだわ。「つまり、Xをする必要があるということですね」って。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That's a great technique. It prevents misunderstandings. Have you had any pharmacy experiences to share?",
+          "jp_text": "それは素晴らしいテクニックだね。誤解を防げる。薬局での経験は何かある？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Oh yes. Last month I needed medicine for a cold. I didn't know the difference between prescription and over-the-counter drugs.",
+          "jp_text": "ああ、あるわ。先月風邪薬が必要だったの。処方薬と市販薬の違いがわからなかったわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That's an important distinction. What did you ask for?",
+          "jp_text": "それは重要な区別だね。何を求めたの？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "I described my symptoms to the pharmacist. I have a runny nose, sore throat, and a cough. They recommended some OTC medicines.",
+          "jp_text": "薬剤師に症状を説明したの。「鼻水、のどの痛み、咳があります」って。市販薬をいくつか勧めてくれたわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Did they explain the dosage clearly?",
+          "jp_text": "用量について明確に説明してくれた？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Yes, they said take two tablets every six hours, not to exceed eight tablets in twenty-four hours. Very specific instructions.",
+          "jp_text": "ええ、「6時間ごとに2錠、24時間で8錠を超えないように」って言われたわ。とても具体的な指示だったの。"
+        },
+        {
+          "speaker": "mike",
+          "text": "It's crucial to understand those directions. Any side effects warnings?",
+          "jp_text": "その指示を理解するのは重要だね。副作用の警告はあった？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "They mentioned it might cause drowsiness. The phrase was do not drive or operate machinery. Very formal language.",
+          "jp_text": "眠気を引き起こす可能性があるって言われたわ。「運転や機械の操作をしないでください」って表現だった。とてもフォーマルな言葉ね。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Medical and legal language tends to be very formal. It's different from conversational English.",
+          "jp_text": "医学的、法的な言語はとてもフォーマルになりがちだね。会話の英語とは違う。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "True. Oh, speaking of formal situations, remember when you had to call emergency services for your neighbor?",
+          "jp_text": "本当ね。フォーマルな状況といえば、隣人のために緊急サービスに電話した時のこと覚えてる？"
+        },
+        {
+          "speaker": "mike",
+          "text": "Yes, that elderly man who fell. I had to call 911. The dispatcher asked very specific questions.",
+          "jp_text": "ああ、転倒した高齢の男性ね。911に電話しなきゃいけなかった。通信指令員がとても具体的な質問をしてきたよ。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "What did they ask first?",
+          "jp_text": "最初に何を聞かれた？"
+        },
+        {
+          "speaker": "mike",
+          "text": "What's your emergency? I said my neighbor has fallen and can't get up. He appears to be injured.",
+          "jp_text": "「どのような緊急事態ですか」って。「隣人が転倒して起き上がれません。怪我をしているようです」って答えたよ。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Did they ask about his condition?",
+          "jp_text": "彼の状態について聞かれた？"
+        },
+        {
+          "speaker": "mike",
+          "text": "Yes. Is he conscious? Is he breathing? I had to check and report back. He was conscious but in pain.",
+          "jp_text": "うん。「意識はありますか？呼吸していますか？」って。確認して報告しなきゃいけなかった。意識はあったけど痛がってたよ。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "That must have been stressful. How quickly did they arrive?",
+          "jp_text": "それはストレスだったでしょうね。どのくらい早く到着した？"
+        },
+        {
+          "speaker": "mike",
+          "text": "Within ten minutes. They kept me on the line until the paramedics arrived. Stay with him and keep him still, they said.",
+          "jp_text": "10分以内だった。救急隊員が到着するまで電話を切らないでいてくれたよ。「彼のそばにいて、動かさないでください」って言われた。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "You handled that really well. Emergency situations require clear communication.",
+          "jp_text": "本当によく対処したわね。緊急事態では明確なコミュニケーションが必要よ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Thanks. I think the main thing is to stay calm and answer their questions directly. No need for long explanations.",
+          "jp_text": "ありがとう。大事なのは落ち着いて、質問に直接答えることだと思う。長い説明は必要ないんだ。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Agreed. Short, clear answers are best in emergencies. Location, situation, condition. Those are the key points.",
+          "jp_text": "同感よ。緊急時は短く明確な答えが一番。場所、状況、状態。それが重要なポイントね。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Well, hopefully our listeners won't need this vocabulary, but it's better to be prepared.",
+          "jp_text": "まあ、リスナーの皆さんがこの語彙を必要としないことを願うけど、準備しておく方がいいよね。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Definitely. Knowing these phrases gives you confidence when you really need it. Practice them before you need them.",
+          "jp_text": "間違いなく。これらのフレーズを知っていれば、本当に必要な時に自信が持てるわ。必要になる前に練習しておくことね。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Great advice. Should we quickly review some of the key phrases we talked about today?",
+          "jp_text": "素晴らしいアドバイスだ。今日話した重要なフレーズをさっと復習しようか？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Good idea. For medical situations, remember to describe pain clearly. Use the pain scale and specific descriptors.",
+          "jp_text": "いいアイデアね。医療の状況では、痛みを明確に説明することを覚えておいて。痛みの段階と具体的な表現を使うこと。"
+        },
+        {
+          "speaker": "mike",
+          "text": "For lost or stolen items, file a report and get a reference number. Cancel cards immediately.",
+          "jp_text": "紛失や盗難の場合は、届け出を提出して参照番号をもらうこと。カードはすぐにキャンセルする。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "For banking, know the difference between checking and savings accounts. Have your documents ready.",
+          "jp_text": "銀行業務では、当座預金と普通預金の違いを知っておくこと。書類を準備しておく。"
+        },
+        {
+          "speaker": "mike",
+          "text": "And always, always ask for clarification if you don't understand. There's no shame in asking someone to repeat or explain.",
+          "jp_text": "そしていつも、理解できない時は必ず説明を求めること。繰り返しや説明を頼むことは恥ずかしいことじゃない。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Perfect summary. These real-life situations might seem scary, but with the right vocabulary, you can handle them.",
+          "jp_text": "完璧なまとめね。これらの実生活の状況は怖く見えるかもしれないけど、正しい語彙があれば対処できるわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Thanks for sharing your experiences, Sarah. I'm sure our listeners found them helpful.",
+          "jp_text": "経験を共有してくれてありがとう、サラ。リスナーの皆さんにも役立ったと思うよ。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Thank you too, Mike. Remember everyone, practice these phrases when you're calm, so you're ready when you need them.",
+          "jp_text": "こちらこそありがとう、マイク。みなさん、落ち着いている時にこれらのフレーズを練習して、必要な時に準備ができているようにしてくださいね。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Great advice to end on. Thanks for listening to Real Life English Survival.",
+          "jp_text": "素晴らしいアドバイスで締めくくりだね。Real Life English Survivalを聞いてくれてありがとう。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Join us next week when we'll talk about apartment hunting and dealing with landlords. Until then, stay safe and keep practicing.",
+          "jp_text": "来週はアパート探しと大家さんとの付き合い方について話します。それまで、安全に過ごして練習を続けてくださいね。"
+        },
+        {
+          "speaker": "mike",
+          "text": "See you next time everyone.",
+          "jp_text": "また次回、みなさん。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Bye for now.",
+          "jp_text": "それでは、また。"
+        }
+      ]
+    }
+  ]
+}

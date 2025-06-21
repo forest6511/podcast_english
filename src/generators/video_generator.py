@@ -88,102 +88,6 @@ class VideoGenerator:
         print(f"Video saved to: {output_path}")
         return output_path
 
-    def _get_subtitle_clips_list(self, subtitle_path: Path) -> List:
-        """字幕クリップのリストを返す（CompositeVideoClipではなく個別のクリップのリスト）"""
-        subtitles = self._parse_srt(subtitle_path)
-        clips = []
-
-        # 調整可能な定数
-        VERTICAL_PADDING = 25      # 字幕背景の上下余白
-        HORIZONTAL_PADDING = 80    # 字幕背景の左右余白
-        LINE_HEIGHT = 80           # 行の高さ
-        LINE_SPACING = 5           # 行間
-        SCREEN_HEIGHT = 1080
-        BOTTOM_MARGIN = 50         # 画面下端からの最小マージン
-
-        for start, end, text in subtitles:
-            formatted_text = self._format_subtitle_text(text)
-            lines = formatted_text.split('\n')
-            line_count = len(lines)
-
-            # Skip empty text
-            if not formatted_text.strip():
-                print(f"WARNING: Skipping empty subtitle at {start}-{end}")
-                continue
-
-            # 背景サイズを計算
-            content_height = (line_count * LINE_HEIGHT) + ((line_count - 1) * LINE_SPACING)
-            bg_height = content_height + (VERTICAL_PADDING * 2)
-            bg_width = 1600 + (HORIZONTAL_PADDING * 2)  # 調整可能な幅
-
-            # Ensure minimum dimensions
-            bg_height = max(bg_height, 50)
-            bg_width = max(bg_width, 100)
-
-            # 表示位置を動的に調整
-            max_allowed_y = SCREEN_HEIGHT - bg_height - BOTTOM_MARGIN
-            bg_y_position = min(750, max_allowed_y)  # 通常は750、はみ出る場合は上に移動
-
-            # 背景作成
-            try:
-                rounded_img = self._create_rounded_rectangle(bg_width, bg_height)
-                img_array = np.array(rounded_img)
-
-                # Validate image array
-                if img_array.size == 0:
-                    print(f"WARNING: Empty background image for subtitle: {text[:50]}...")
-                    continue
-
-                bg_clip = ImageClip(img_array, duration=end-start)
-                bg_clip = bg_clip.with_start(start).with_end(end)
-                bg_clip = bg_clip.with_position(('center', bg_y_position))
-
-                # Validate background clip
-                if not self._validate_clip(bg_clip, "subtitle background"):
-                    print(f"WARNING: Invalid background clip for subtitle: {text[:50]}...")
-                    continue
-
-                clips.append(bg_clip)
-            except Exception as e:
-                print(f"ERROR creating background for subtitle '{text[:50]}...': {e}")
-                continue
-
-            # 各行を配置
-            for i, line in enumerate(lines):
-                if not line.strip():  # Skip empty lines
-                    continue
-
-                try:
-                    line_clip = TextClip(
-                        text=line.strip(),
-                        font_size=72,
-                        font='/System/Library/Fonts/Helvetica.ttc',
-                        color='white',
-                        method='label',
-                        text_align='center'
-                    )
-
-                    # Validate text clip dimensions
-                    if not self._validate_clip(line_clip, f"text line: {line[:20]}"):
-                        print(f"WARNING: Invalid text clip for line: {line}")
-                        continue
-
-                    line_clip = line_clip.with_start(start).with_end(end)
-
-                    line_y = (bg_y_position +
-                              VERTICAL_PADDING +
-                              (i * (LINE_HEIGHT + LINE_SPACING)) +
-                              (LINE_HEIGHT // 2) - 36)
-
-                    line_clip = line_clip.with_position(('center', line_y))
-                    clips.append(line_clip)
-
-                except Exception as e:
-                    print(f"ERROR creating text clip for line '{line}': {e}")
-                    continue
-
-        return clips
-
     def _create_rounded_rectangle(self, width: int, height: int, radius: int = 30):
         """角丸の長方形画像を作成"""
         # Ensure minimum dimensions
@@ -233,48 +137,6 @@ class VideoGenerator:
         minutes = float(parts[1])
         seconds = float(parts[2])
         return hours * 3600 + minutes * 60 + seconds
-
-    def _format_subtitle_text(self, text: str, max_chars_per_line: int = 40) -> str:
-        """長いテキストを適切に改行（最大6行）"""
-        words = text.split()
-
-        # 短いテキストはそのまま返す
-        if len(text) <= 50:
-            return text
-
-        # 長いテキストを行に分割
-        lines = []
-        current_line = []
-        current_length = 0
-
-        for word in words:
-            # 単語を追加した場合の長さを計算
-            word_length = len(word)
-            if current_length == 0:
-                new_length = word_length
-            else:
-                new_length = current_length + 1 + word_length  # スペースを含む
-
-            # 行の長さ制限をチェック
-            if new_length <= max_chars_per_line:
-                current_line.append(word)
-                current_length = new_length
-            else:
-                # 現在の行を確定し、新しい行を開始
-                if current_line:
-                    lines.append(' '.join(current_line))
-                current_line = [word]
-                current_length = word_length
-
-        # 最後の行を追加
-        if current_line:
-            lines.append(' '.join(current_line))
-
-        # 最大行数制限を6行に拡張
-        if len(lines) > 6:
-            lines = lines[:6]
-
-        return '\n'.join(lines)
 
     def _create_title_overlay(self, episode: Episode, duration: float, series_title: str = None):
         """タイトルオーバーレイを作成（PILを使用）"""
@@ -427,3 +289,166 @@ class VideoGenerator:
             import traceback
             traceback.print_exc()
             raise
+
+    def _get_subtitle_clips_list(self, subtitle_path: Path) -> List:
+        """字幕クリップのリストを返す（CompositeVideoClipではなく個別のクリップのリスト）"""
+        subtitles = self._parse_srt(subtitle_path)
+        clips = []
+
+        # 調整可能な定数
+        VERTICAL_PADDING = 20      # 字幕背景の上下余白（削減）
+        HORIZONTAL_PADDING = 60    # 字幕背景の左右余白（削減）
+        LINE_HEIGHT = 65           # 行の高さ（削減）
+        LINE_SPACING = 3           # 行間（削減）
+        SCREEN_HEIGHT = 1080
+        BOTTOM_MARGIN = 40         # 画面下端からの最小マージン
+        MAX_LINES = 4              # 最大行数制限
+
+        for start, end, text in subtitles:
+            formatted_text = self._format_subtitle_text(text, max_lines=MAX_LINES)
+            lines = formatted_text.split('\n')
+            line_count = len(lines)
+
+            # Skip empty text
+            if not formatted_text.strip():
+                print(f"WARNING: Skipping empty subtitle at {start}-{end}")
+                continue
+
+            # 背景サイズを計算
+            content_height = (line_count * LINE_HEIGHT) + ((line_count - 1) * LINE_SPACING)
+            bg_height = content_height + (VERTICAL_PADDING * 2)
+            bg_width = 1400 + (HORIZONTAL_PADDING * 2)  # 幅も調整
+
+            # Ensure minimum dimensions
+            bg_height = max(bg_height, 50)
+            bg_width = max(bg_width, 100)
+
+            # 表示位置を動的に調整（4行以上の場合は上に移動）
+            if line_count <= 3:
+                bg_y_position = 750
+            else:
+                # 4行の場合は少し上に配置
+                max_allowed_y = SCREEN_HEIGHT - bg_height - BOTTOM_MARGIN
+                bg_y_position = min(700, max_allowed_y)
+
+            # 背景作成
+            try:
+                rounded_img = self._create_rounded_rectangle(bg_width, bg_height)
+                img_array = np.array(rounded_img)
+
+                # Validate image array
+                if img_array.size == 0:
+                    print(f"WARNING: Empty background image for subtitle: {text[:50]}...")
+                    continue
+
+                bg_clip = ImageClip(img_array, duration=end-start)
+                bg_clip = bg_clip.with_start(start).with_end(end)
+                bg_clip = bg_clip.with_position(('center', bg_y_position))
+
+                # Validate background clip
+                if not self._validate_clip(bg_clip, "subtitle background"):
+                    print(f"WARNING: Invalid background clip for subtitle: {text[:50]}...")
+                    continue
+
+                clips.append(bg_clip)
+            except Exception as e:
+                print(f"ERROR creating background for subtitle '{text[:50]}...': {e}")
+                continue
+
+            # 各行を配置（フォントサイズも調整）
+            for i, line in enumerate(lines):
+                if not line.strip():  # Skip empty lines
+                    continue
+
+                try:
+                    # 行数に応じてフォントサイズを調整
+                    if line_count <= 2:
+                        font_size = 72
+                    elif line_count == 3:
+                        font_size = 68
+                    else:  # 4行
+                        font_size = 64
+
+                    line_clip = TextClip(
+                        text=line.strip(),
+                        font_size=font_size,
+                        font='/System/Library/Fonts/Helvetica.ttc',
+                        color='white',
+                        method='label',
+                        text_align='center'
+                    )
+
+                    # Validate text clip dimensions
+                    if not self._validate_clip(line_clip, f"text line: {line[:20]}"):
+                        print(f"WARNING: Invalid text clip for line: {line}")
+                        continue
+
+                    line_clip = line_clip.with_start(start).with_end(end)
+
+                    # テキストの垂直位置を調整
+                    line_y = (bg_y_position +
+                              VERTICAL_PADDING +
+                              (i * (LINE_HEIGHT + LINE_SPACING)) +
+                              (LINE_HEIGHT // 2) - (font_size // 2))
+
+                    line_clip = line_clip.with_position(('center', line_y))
+                    clips.append(line_clip)
+
+                except Exception as e:
+                    print(f"ERROR creating text clip for line '{line}': {e}")
+                    continue
+
+        return clips
+
+    def _format_subtitle_text(self, text: str, max_chars_per_line: int = 45, max_lines: int = 4) -> str:
+        """長いテキストを適切に改行（最大行数を指定可能）"""
+        words = text.split()
+
+        # 短いテキストはそのまま返す
+        if len(text) <= 50:
+            return text
+
+        # 長いテキストを行に分割
+        lines = []
+        current_line = []
+        current_length = 0
+
+        for word in words:
+            # 単語を追加した場合の長さを計算
+            word_length = len(word)
+            if current_length == 0:
+                new_length = word_length
+            else:
+                new_length = current_length + 1 + word_length  # スペースを含む
+
+            # 行の長さ制限をチェック
+            if new_length <= max_chars_per_line:
+                current_line.append(word)
+                current_length = new_length
+            else:
+                # 現在の行を確定し、新しい行を開始
+                if current_line:
+                    lines.append(' '.join(current_line))
+                current_line = [word]
+                current_length = word_length
+
+                # 最大行数に達した場合は残りを省略
+                if len(lines) >= max_lines - 1:
+                    # 残りの単語を最後の行に詰め込む
+                    remaining_words = words[words.index(word):]
+                    last_line = ' '.join(remaining_words)
+                    # 最後の行が長すぎる場合は省略記号を追加
+                    if len(last_line) > max_chars_per_line + 10:
+                        last_line = last_line[:max_chars_per_line] + '...'
+                    lines.append(last_line)
+                    break
+
+        # 最後の行を追加（最大行数に達していない場合）
+        if current_line and len(lines) < max_lines:
+            lines.append(' '.join(current_line))
+
+        # 最大行数制限
+        if len(lines) > max_lines:
+            lines = lines[:max_lines]
+
+        return '\n'.join(lines)

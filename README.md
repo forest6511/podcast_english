@@ -15,7 +15,9 @@ poetry shell
 ```
 # Run generator
 ```
-poetry run python -m src.main generate --series 001
+poetry run python -m src.main --series 001
+poetry run python -m src.main --series 002
+
 ```
 Project Structure
 
@@ -34,10 +36,25 @@ Video composition with MoviePy
 Se```ries-based content management
 ```
 
+```
+以下のトピックで英語学習Podcast用の会話を作成してください。
 
-TTS用に最適化した版を作成します。
+【トピック】
+[具体的なテーマを記入]
 
-"..." → 自然な文章に変更
-"Ha!" → "Haha" または削除
-感嘆符の連続使用を避ける
-不自然な記号を除去
+【含めてほしい場面・フレーズ】
+- [場面1]
+- [場面2]
+- [場面3]
+
+【出力形式】
+- 既存のJSON形式に従う
+- episodeのidは[番号]
+- タイトルとsubtitleは視聴者の興味を引くものに
+
+【TTS最適化】
+- "..."は自然な文章に変更
+- 感嘆符の連続使用を避ける
+- 不自然な記号を除去
+- "Ha!"は"Haha"または削除
+```
