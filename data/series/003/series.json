@@ -1,0 +1,594 @@
+{
+  "series_info": {
+    "id": "003",
+    "title": "Restaurant Experiences",
+    "subtitle": "Master Dining Out with Confidence",
+    "description": "Learn essential restaurant vocabulary and etiquette through real-life experiences",
+    "target_level": "beginner-intermediate",
+    "status": "active"
+  },
+  "settings": {
+    "tts_engine": "google-cloud",
+    "speaking_speed": 0.8,
+    "pause_between_lines": 0.6,
+    "background_image": "assets/backgrounds/podcast_bg.jpg",
+    "voices": {
+      "mike": {
+        "name": "en-US-Standard-D"
+      },
+      "sarah": {
+        "name": "en-US-Standard-F"
+      }
+    }
+  },
+  "episodes": [
+    {
+      "id": "003",
+      "title": "From Reservations to Check - Complete Restaurant Guide",
+      "description": "Navigate every aspect of dining out, from booking tables to calculating tips",
+      "duration_estimate": 1500,
+      "conversations": [
+        {
+          "speaker": "mike",
+          "text": "Welcome everyone to Restaurant Experiences! I'm Mike, and today we're going to master the art of dining out.",
+          "jp_text": "みなさん、Restaurant Experiencesへようこそ！マイクです。今日は外食の技術をマスターしていきます。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Hi everyone! I'm Sarah, and I have to tell you - I had the most interesting restaurant experience last weekend that taught me so much about dining etiquette.",
+          "jp_text": "みなさん、こんにちは！サラです。先週末に最も興味深いレストラン体験をして、食事のエチケットについてとても多くのことを学んだんです。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Oh, this sounds like a great story! Before we dive into your adventure, let's talk about the basics. Many of our listeners might be nervous about dining out in English-speaking countries.",
+          "jp_text": "おお、これは素晴らしい話になりそうだね！君の冒険に入る前に、基本について話そう。リスナーの多くは英語圏での外食について緊張しているかもしれない。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Absolutely! I remember when I first moved here, I was terrified of restaurants. The vocabulary, the etiquette, the tipping - it all seemed so overwhelming.",
+          "jp_text": "その通り！ここに引っ越してきた当初、レストランが怖かったのを覚えているわ。語彙、エチケット、チップ - 全てがとても圧倒的に感じられたの。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That's completely normal! So let's start with the very beginning - making a reservation. Sarah, how did you handle that for your recent dinner?",
+          "jp_text": "それは全く普通のことだよ！じゃあ最初から始めよう - 予約を取ること。サラ、最近のディナーではどう対処したの？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Well, I called this upscale Italian restaurant called 'Bella Notte' around 2 PM. I was nervous, but I had practiced the phrase beforehand. I said, 'Hello, I'd like to make a reservation for two people for tonight at 7:30 PM, please.'",
+          "jp_text": "えーと、午後2時頃に「ベラ・ノッテ」という高級イタリアンレストランに電話したの。緊張したけど、事前にフレーズを練習していたの。「こんにちは、今夜7時30分に2名で予約を取りたいのですが」って言ったわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That's a perfect way to start! What did the hostess say back to you?",
+          "jp_text": "それは完璧な始め方だね！ホステスは何て返答したの？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "She asked me several questions that I wasn't prepared for! First, she said, 'What name should I put the reservation under?' Then she asked, 'Would you prefer a booth or a table?' I had to ask her to repeat the second question because I didn't know what a booth was!",
+          "jp_text": "準備していなかったいくつかの質問をされたの！まず「予約はどちらのお名前でお取りしましょうか？」って言われて、それから「ブースとテーブル、どちらがよろしいですか？」って聞かれたの。ブースが何かわからなくて、2番目の質問を繰り返してもらわなきゃいけなかった！"
+        },
+        {
+          "speaker": "mike",
+          "text": "Ah, that's a great learning moment! For our listeners, a booth is those cozy seating areas with high backs and cushioned seats, usually more private than regular tables.",
+          "jp_text": "ああ、それは素晴らしい学習の瞬間だね！リスナーのみなさん、ブースというのは背もたれが高くてクッション付きの座席がある居心地の良い席のことで、普通のテーブルより個室感があるんです。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Exactly! I learned that the hard way. I said, 'Could you explain what a booth is?' and the hostess was very patient. She explained it perfectly. Then she confirmed, 'So that's two people at 7:30 PM under Sarah, and you'd like a booth. We have availability. See you tonight!'",
+          "jp_text": "その通り！痛い目に遭って学んだのよ。「ブースとは何か説明していただけますか？」って言ったら、ホステスはとても忍耐強かったわ。完璧に説明してくれたの。それから確認してくれたの。「7時30分にサラ様で2名、ブース席をご希望ですね。空きがございます。今夜お待ちしております！」って。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That's wonderful! You know what, let's actually practice a reservation call right now. I'll be the restaurant hostess, and Sarah, you can guide our listeners through what to say. Ready?",
+          "jp_text": "それは素晴らしい！実際に今予約の電話を練習してみよう。私がレストランのホステス役をするから、サラ、リスナーに何を言うべきか案内してくれる？準備はいい？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Great idea! Okay listeners, when the phone is answered, wait for the greeting, then clearly state your request.",
+          "jp_text": "素晴らしいアイデア！リスナーの皆さん、電話が出たら挨拶を待って、それからリクエストを明確に述べてください。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Good afternoon, Bella Notte restaurant, this is Jessica speaking. How may I help you today?",
+          "jp_text": "こんにちは、ベラ・ノッテレストランです。ジェシカです。本日はどのようなご用件でしょうか？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Now you would say: 'Hello, I'd like to make a reservation, please.' Go ahead, listeners, practice saying that out loud!",
+          "jp_text": "ここで言うのは：「こんにちは、予約を取りたいのですが」リスナーの皆さん、声に出して練習してみて！"
+        },
+        {
+          "speaker": "mike",
+          "text": "Of course! I'd be happy to help you with that. For what date and time would you like the reservation?",
+          "jp_text": "もちろんです！喜んでお手伝いします。何日の何時にご予約をご希望ですか？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Perfect! Now you specify: 'For this Saturday at 7 PM, please.' Always be specific with the date and time.",
+          "jp_text": "完璧！今度は具体的に：「今週の土曜日の午後7時でお願いします」日付と時間は常に具体的に。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Let me check our availability... How many people will be in your party?",
+          "jp_text": "空き状況を確認させていただきます...何名様でしょうか？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Notice she said 'party' - that means your group. You'd answer: 'Four people, please.' Or 'A party of four.'",
+          "jp_text": "「パーティー」と言ったことに注目 - それはあなたのグループという意味。答えは：「4名でお願いします」または「4名のパーティーです」"
+        },
+        {
+          "speaker": "mike",
+          "text": "Excellent! We do have availability. May I have your name for the reservation?",
+          "jp_text": "素晴らしい！空きがございます。ご予約のお名前をいただけますか？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Give your last name and spell it if it's unusual. Like: 'Johnson. That's J-O-H-N-S-O-N.'",
+          "jp_text": "苗字を伝えて、珍しい名前ならスペルを言います。例：「ジョンソンです。J-O-H-N-S-O-Nです」"
+        },
+        {
+          "speaker": "mike",
+          "text": "Got it, Mr. Johnson. Would you prefer indoor or outdoor seating? We have a lovely patio area.",
+          "jp_text": "承知いたしました、ジョンソン様。屋内席と屋外席、どちらがよろしいですか？素敵なパティオエリアがございます。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "This is where you can ask questions if you're unsure. You might say: 'What's the weather supposed to be like?' or simply choose: 'Indoor seating, please.'",
+          "jp_text": "ここで不明な点があれば質問できます。「天気はどうなる予定ですか？」と聞くか、単に「屋内席でお願いします」と選びます。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Perfect! So I have you down for a party of four this Saturday at 7 PM for indoor seating. Can I have a phone number in case we need to contact you?",
+          "jp_text": "完璧です！今週土曜日午後7時に4名様、屋内席でご予約を承りました。ご連絡が必要な場合のために電話番号をいただけますか？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Always provide a number where you can be reached. Say it slowly and clearly.",
+          "jp_text": "連絡が取れる番号を必ず提供してください。ゆっくりはっきりと言います。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Thank you! Your reservation is confirmed. We look forward to seeing you Saturday at 7 PM. Is there anything special we should know - any allergies or special occasions?",
+          "jp_text": "ありがとうございます！ご予約を確定いたしました。土曜日午後7時にお待ちしております。アレルギーや特別な機会など、お知らせいただくことはございますか？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "This is important! Mention any dietary restrictions or celebrations. You might say: 'Yes, it's my wife's birthday' or 'One person in our group has a nut allergy.'",
+          "jp_text": "これは重要！食事制限やお祝い事があれば伝えます。「はい、妻の誕生日です」や「グループの1人がナッツアレルギーです」など。"
+        },
+        {
+          "speaker": "mike",
+          "text": "How wonderful! We'll make a note of that. We'll see you Saturday evening. Have a great day!",
+          "jp_text": "素晴らしい！メモしておきます。土曜日の夜にお会いしましょう。良い一日を！"
+        },
+        {
+          "speaker": "sarah",
+          "text": "And you'd end with: 'Thank you very much. See you Saturday!' That's it! Great job everyone!",
+          "jp_text": "最後に：「ありがとうございます。土曜日にお会いしましょう！」これで完了！皆さん、よくできました！"
+        },
+        {
+          "speaker": "mike",
+          "text": "That was excellent practice! Now, let's go back to your actual experience. You arrived at the restaurant - what happened with the reservation mix-up?",
+          "jp_text": "素晴らしい練習だった！さて、君の実際の体験に戻ろう。レストランに到着して - 予約の手違いで何が起きたの？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Right! When I walked in, there was a hostess stand at the front. I approached and said, 'Hi, I have a reservation for two under Sarah at 7:30.' But here's where it got interesting - she couldn't find my reservation in their system!",
+          "jp_text": "そうだった！入った時、フロントにホステススタンドがあったの。近づいて「こんにちは、7時30分にサラで2名予約しています」って言ったんだけど、ここからが面白いところよ - システムに私の予約が見つからないって言われたの！"
+        },
+        {
+          "speaker": "mike",
+          "text": "Oh no! That must have been stressful. How did you handle that situation?",
+          "jp_text": "うわあ！それはストレスだったでしょうね。その状況をどう対処したの？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "I tried to stay calm and polite. I said, 'I'm certain I made a reservation this afternoon. I spoke with someone around 2 PM. Could you please check again?' The hostess was apologetic and said, 'Let me double-check our system and speak with my manager.'",
+          "jp_text": "冷静で丁寧でいようと努めたの。「今日の午後確実に予約をしました。午後2時頃に誰かとお話しました。もう一度確認していただけますか？」って言ったら、ホステスは謝って「システムをもう一度確認して、マネージャーと話してみます」って言ってくれたわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That's exactly the right approach - calm and persistent. What was the outcome?",
+          "jp_text": "それは正にその通りのアプローチだね - 冷静で粘り強く。結果はどうだった？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "After about five minutes, the manager came out and said, 'I sincerely apologize for the confusion. We had a computer glitch earlier today, and some reservations weren't saved properly. We absolutely have space for you.' They seated us immediately at a beautiful booth by the window.",
+          "jp_text": "5分ほどして、マネージャーが出てきて「混乱を招いて心からお詫びします。今日の早い時間にコンピューターの不具合があり、いくつかの予約が適切に保存されていませんでした。確実にお席をご用意できます」って言ってくれたの。すぐに窓際の美しいブース席に案内してくれたわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That worked out well! You know, while we're on the topic of arrival, let's talk about what happens if you're running late. This is crucial information.",
+          "jp_text": "うまくいったね！到着の話題が出たところで、遅れそうな時の対処について話そう。これは重要な情報だよ。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Oh yes! I actually had to do this once. If you're going to be more than 10 minutes late, you should call the restaurant. I had to say: 'Hello, I have a reservation at 7 PM under Sarah. I'm running about 15 minutes late due to traffic. Is that okay?'",
+          "jp_text": "そうね！実際に一度したことがあるの。10分以上遅れそうな場合は、レストランに電話すべきよ。「こんにちは、7時にサラで予約しています。交通渋滞で15分ほど遅れそうです。大丈夫でしょうか？」って言わなければならなかったわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That's very considerate! Most restaurants will hold your table for 15-20 minutes, but calling shows respect. What if you need to cancel?",
+          "jp_text": "それはとても思いやりがあるね！ほとんどのレストランは15-20分は席を確保してくれるけど、電話することは敬意を示すよ。キャンセルする必要がある場合は？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Always call as soon as you know you can't make it. Say something like: 'I'm sorry, but I need to cancel my reservation for tonight at 7 PM under Sarah. Something urgent has come up.' They usually appreciate the notice.",
+          "jp_text": "行けないとわかったらすぐに電話すべきよ。「申し訳ありませんが、今夜7時のサラの予約をキャンセルする必要があります。急用が入ってしまいました」のように言うの。通常、連絡してくれることに感謝してくれるわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Absolutely. Now, once you were seated, how did the ordering process begin?",
+          "jp_text": "その通りだね。さて、席に着いてから、注文プロセスはどう始まったの？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "The server came over within a few minutes and introduced himself. He said, 'Good evening, I'm David, and I'll be taking care of you tonight. Can I start you off with something to drink?' I had prepared for this moment, but I still felt nervous.",
+          "jp_text": "数分でサーバーが来て自己紹介してくれたの。「こんばんは、デイビッドです。今夜お世話させていただきます。まずお飲み物からいかがですか？」って言われたわ。この瞬間のために準備していたけど、まだ緊張していたの。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Let's talk about drink ordering in more detail. There are so many options and ways to order. What are some common phrases?",
+          "jp_text": "飲み物の注文についてもっと詳しく話そう。とても多くの選択肢と注文方法があるよね。一般的なフレーズは何がある？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "For water, you might hear: 'Still, sparkling, or tap?' Still means regular bottled water, sparkling is carbonated, and tap is from the faucet. I usually say: 'Tap water is fine, thank you.' It's free and perfectly good!",
+          "jp_text": "水については「スティル、スパークリング、それともタップ？」と聞かれるかも。スティルは普通のボトル水、スパークリングは炭酸入り、タップは水道水。私は通常「タップウォーターで結構です、ありがとう」って言うの。無料で十分良いものよ！"
+        },
+        {
+          "speaker": "mike",
+          "text": "Good tip! What about alcoholic beverages?",
+          "jp_text": "良いヒントだ！アルコール飲料についてはどう？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "If you're not sure about wine, you can ask: 'What wine would you recommend with the salmon?' For beer, you might ask: 'What do you have on tap?' which means draft beer. Or 'Do you have any local beers?' Always remember to have your ID ready - they often check!",
+          "jp_text": "ワインについて確信がない場合は「サーモンに合うワインは何をお勧めしますか？」と聞けるわ。ビールについては「生ビールは何がありますか？」つまりドラフトビールのこと。または「地元のビールはありますか？」IDを準備しておくことを忘れずに - よくチェックされるから！"
+        },
+        {
+          "speaker": "mike",
+          "text": "That's important! Now, you mentioned you wanted to order wine but were worried about pronunciation. What did you do?",
+          "jp_text": "それは重要だね！ワインを注文したかったけど発音が心配だったと言ってたね。どうしたの？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "I wanted to order wine, but I wasn't confident about pronouncing the Italian names. So I used a strategy I had learned - I asked for a recommendation. I said, 'Could you recommend a good red wine that pairs well with pasta?' David was so helpful!",
+          "jp_text": "ワインを注文したかったんだけど、イタリア語の名前の発音に自信がなかったの。だから学んだ戦略を使ったの - 推薦をお願いしたの。「パスタによく合う美味しい赤ワインを推薦していただけますか？」って言ったら、デイビッドはとても親切だったわ！"
+        },
+        {
+          "speaker": "mike",
+          "text": "That's brilliant! Asking for recommendations is such a useful strategy. It shows trust in the server's expertise and takes the pressure off pronunciation. What did he suggest?",
+          "jp_text": "それは素晴らしい！推薦をお願いするのはとても有用な戦略だね。サーバーの専門知識への信頼を示すし、発音のプレッシャーも取り除ける。何を提案してくれたの？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "He suggested a Chianti Classico and explained, 'This is a medium-bodied red wine from Tuscany. It has nice cherry flavors and won't overpower your pasta.' Then he asked, 'Would you like to try a small taste before I pour a full glass?' I said yes, and it was perfect!",
+          "jp_text": "キャンティ・クラシコを勧めてくれて説明してくれたの。「これはトスカーナ産のミディアムボディの赤ワインです。素敵なチェリーの風味があり、パスタを圧倒しません」って。それから「フルグラスを注ぐ前に少し味見していただきますか？」って聞かれて、はいって答えたら、完璧だったの！"
+        },
+        {
+          "speaker": "mike",
+          "text": "That's great service! Wine tasting before ordering is common in nice restaurants. Now, what about food? Did you have any dietary restrictions to mention?",
+          "jp_text": "それは素晴らしいサービスだね！注文前のワインテイスティングは良いレストランでは一般的だよ。さて、食事についてはどう？何か食事制限を伝える必要はあった？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Actually, yes! My friend Emma is vegetarian, and she also has a dairy allergy. When David came back for our food order, Emma said, 'I'm vegetarian, and I'm also allergic to dairy products. What options do you have for me?' I was impressed by how directly she stated her needs.",
+          "jp_text": "実はあったの！友達のエマはベジタリアンで、乳製品アレルギーもあるの。デイビッドが食事の注文を取りに戻ってきた時、エマが「私はベジタリアンで、乳製品アレルギーもあります。私に合う選択肢はありますか？」って言ったの。彼女が自分のニーズを直接的に述べたのに感心したわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That's exactly how to handle dietary restrictions - clear and direct. Let's practice some other dietary phrases. What if someone is gluten-free?",
+          "jp_text": "それは食事制限への対処法として正にその通りだね - 明確で直接的に。他の食事制限フレーズも練習しよう。グルテンフリーの人はどう言う？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "You'd say: 'I need to avoid gluten. Do you have gluten-free options?' Or for other allergies: 'I'm severely allergic to shellfish. Can you ensure my meal doesn't come in contact with any?' The word 'severely' emphasizes it's serious.",
+          "jp_text": "「グルテンを避ける必要があります。グルテンフリーの選択肢はありますか？」と言うの。他のアレルギーについては：「甲殻類に重度のアレルギーがあります。私の食事が一切接触しないようにしていただけますか？」「重度」という言葉は深刻であることを強調するわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Excellent examples. What about religious dietary restrictions?",
+          "jp_text": "素晴らしい例だね。宗教的な食事制限についてはどう？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "You can say: 'I follow a halal diet' or 'I keep kosher' or 'I don't eat pork for religious reasons.' Most restaurants in diverse areas understand these requirements and can guide you to appropriate dishes.",
+          "jp_text": "「ハラルダイエットに従っています」や「コーシャを守っています」や「宗教的理由で豚肉を食べません」と言えるわ。多様な地域のほとんどのレストランはこれらの要件を理解していて、適切な料理を案内してくれるの。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Perfect. Now, let's go back to your ordering. What did you end up choosing?",
+          "jp_text": "完璧だ。さて、注文に戻ろう。結局何を選んだの？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "I was torn between two dishes, so I used another phrase I had learned. I asked David, 'What's your most popular pasta dish?' He immediately said, 'The lobster ravioli is our signature dish. It's made fresh daily with Maine lobster and served in a light cream sauce.' That sold me immediately!",
+          "jp_text": "2つの料理で迷ったから、学んだ別のフレーズを使ったの。デイビッドに「一番人気のパスタ料理は何ですか？」って聞いたら、すぐに「ロブスターラビオリが当店の看板料理です。メイン州産ロブスターで毎日新鮮に作られ、軽いクリームソースで提供されます」って言ったの。それで即決したわ！"
+        },
+        {
+          "speaker": "mike",
+          "text": "Smart questioning! Let me share some other useful ordering phrases. You can ask: 'How is the chicken prepared?' or 'Is the fish grilled or fried?' or 'Does this come with any sides?'",
+          "jp_text": "賢い質問だね！他の有用な注文フレーズを共有しよう。「チキンはどのように調理されますか？」や「魚はグリルですか、フライですか？」や「これにサイドディッシュは付きますか？」などと聞けるよ。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Yes! And if you want to know about portion sizes, you can ask: 'Is this enough for one person, or is it meant to share?' I once ordered an appetizer thinking it was an entree because I didn't ask!",
+          "jp_text": "そう！ポーションサイズについて知りたい場合は「これは1人分ですか、それともシェア用ですか？」と聞けるわ。聞かなかったために前菜をメインだと思って注文したことがあるの！"
+        },
+        {
+          "speaker": "mike",
+          "text": "That's a common mistake! Speaking of appetizers, let's clarify menu sections for our listeners.",
+          "jp_text": "それはよくある間違いだね！前菜といえば、リスナーのためにメニューのセクションを明確にしよう。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Great idea! Appetizers or starters are small dishes before the main course. Entrees or mains are the main dishes. Sides are additional items like vegetables or potatoes. And desserts come at the end, of course!",
+          "jp_text": "素晴らしいアイデア！アペタイザーやスターターはメインコースの前の小さな料理。アントレやメインがメイン料理。サイドは野菜やポテトなどの追加アイテム。そしてデザートはもちろん最後に来るわ！"
+        },
+        {
+          "speaker": "mike",
+          "text": "Exactly. Now, you placed your orders - did everything go smoothly from there?",
+          "jp_text": "その通り。それで注文したんだね - そこからは全てスムーズだった？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Well, that's where our real adventure began! We waited about 20 minutes, which seemed reasonable for fresh pasta. But when our dishes arrived, there was a problem. My lobster ravioli was lukewarm, and Emma's arrabbiata was way too spicy - like, tears-in-your-eyes spicy.",
+          "jp_text": "そこから本当の冒険が始まったのよ！新鮮なパスタには妥当と思える20分ほど待ったの。でも料理が到着した時、問題があったの。私のロブスターラビオリはぬるくて、エマのアラビアータは涙が出るほど辛すぎたの。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Oh dear! That's disappointing. This is where complaint skills become really important. How did you handle it?",
+          "jp_text": "あらら！それはがっかりだね。ここで苦情スキルが本当に重要になるね。どう対処したの？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "I was honestly nervous about complaining because I didn't want to seem rude. But I knew we had to say something. When David came to check on us, I took a deep breath and said, 'I'm sorry to mention this, but my pasta seems to be lukewarm. Could you please check if it's supposed to be served hot?'",
+          "jp_text": "正直、失礼に見えたくなくて苦情を言うのは緊張したわ。でも何か言わなければいけないってわかってたの。デイビッドが様子を見に来た時、深呼吸して「申し訳ないのですが、パスタがぬるいようなんです。熱々で提供されるべきかどうか確認していただけますか？」って言ったの。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That's a perfect way to phrase a complaint - polite but clear. Let's practice some other complaint scenarios. What if your order is completely wrong?",
+          "jp_text": "それは苦情を表現する完璧な方法だね - 丁寧だけど明確。他の苦情シナリオも練習しよう。注文が完全に間違っていたらどうする？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "You could say: 'Excuse me, I think there's been a mix-up. I ordered the grilled salmon, but this appears to be chicken.' Always give them the benefit of the doubt - say 'mix-up' instead of 'mistake.'",
+          "jp_text": "「すみません、手違いがあったようです。グリルサーモンを注文しましたが、これはチキンのようです」と言えるわ。常に相手の立場を考慮して - 「ミステイク」ではなく「ミックスアップ」と言うの。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That's diplomatic! What if the food tastes off or spoiled?",
+          "jp_text": "それは外交的だね！食べ物の味がおかしかったり腐っていたら？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "That's serious. You should say immediately: 'I'm concerned this might not be fresh. Could you please have the chef check?' Never continue eating something that tastes spoiled - food safety is paramount.",
+          "jp_text": "それは深刻ね。すぐに言うべきよ：「これは新鮮でないかもしれないと心配です。シェフに確認していただけますか？」腐った味がするものを食べ続けてはダメ - 食品安全が最優先よ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Absolutely. Now, back to your story - how did David respond to your lukewarm pasta?",
+          "jp_text": "その通りだ。さて、君の話に戻って - デイビッドは君のぬるいパスタにどう反応した？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "He immediately looked concerned and said, 'Oh no, that's definitely not right. Our pasta should be served steaming hot. I'm so sorry about that.' He touched the plate and confirmed it was indeed too cool. Then he said, 'Let me take this back to the kitchen right away and get you a fresh, hot portion.'",
+          "jp_text": "すぐに心配そうな顔をして「あら、それは確実におかしいです。パスタは湯気が立つほど熱々で提供されるべきです。申し訳ございません」って言ったの。お皿を触って確実に冷たすぎることを確認してから「すぐにキッチンに戻して、新鮮で熱々の分をお持ちします」って言ってくれたわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Excellent response! What about Emma's overly spicy dish?",
+          "jp_text": "素晴らしい対応だね！エマの辛すぎる料理はどうした？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Emma handled it really well. She said, 'I ordered the arrabbiata, but it's much spicier than I expected. I can barely eat it. Is this the normal spice level, or could there have been a mistake in the kitchen?' She was diplomatic but honest about not being able to eat it.",
+          "jp_text": "エマは本当によく対処したわ。「アラビアータを注文しましたが、予想よりもずっと辛くてほとんど食べられません。これが通常の辛さレベルですか、それともキッチンで何か間違いがあったのでしょうか？」って言ったの。外交的だけど食べられないことについて正直だったわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Perfect phrasing. How did they resolve both issues?",
+          "jp_text": "完璧な表現だね。どちらの問題もどう解決した？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "He was amazing! For Emma's dish, he said, 'You know what, we did have a new cook in the kitchen today, and he might have been heavy-handed with the red pepper flakes. That's completely our fault. Would you like to try a different pasta dish, or would you prefer the same dish made milder?' Emma chose a different dish entirely.",
+          "jp_text": "彼は素晴らしかったわ！エマの料理については「実は今日キッチンに新人の料理人がいて、赤唐辛子フレークを入れすぎたのかもしれません。完全に私たちのミスです。別のパスタ料理をお試しになりますか、それとも同じ料理をマイルドに作り直しますか？」って言ったの。エマは全く違う料理を選んだわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Great customer service! Did the replacement dishes solve the problems?",
+          "jp_text": "素晴らしいカスタマーサービスだ！交換した料理で問題は解決した？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Absolutely! My new lobster ravioli came out perfectly hot, and Emma's replacement dish - fettuccine alfredo made with dairy-free cream - was delicious. But here's the best part: David brought us complimentary garlic bread and said the manager wanted to comp our appetizer to apologize for the inconvenience.",
+          "jp_text": "もちろん！私の新しいロブスターラビオリは完璧に熱々で出てきたし、エマの交換料理 - 乳製品不使用クリームで作ったフェットチーネアルフレード - は美味しかったわ。でも一番良かったのは、デイビッドが無料のガーリックブレッドを持ってきて、マネージャーがご迷惑をおかけしたお詫びとして前菜をサービスしたいと言ってくれたことよ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That's how you turn a negative into a positive! Before we discuss the check, let's talk about table etiquette. Any observations from your experience?",
+          "jp_text": "それはネガティブをポジティブに変える方法だね！会計について話す前に、テーブルエチケットについて話そう。君の経験から何か観察したことは？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Oh yes! I noticed several things. First, your napkin goes on your lap as soon as you sit down. If you need to leave the table, place it on your chair, not the table. And when you're finished eating, place your knife and fork together at the 4 o'clock position on your plate.",
+          "jp_text": "ああ、そうね！いくつか気づいたことがあるわ。まず、座ったらすぐにナプキンを膝に置く。テーブルを離れる必要がある場合は、テーブルではなく椅子に置く。食事が終わったら、ナイフとフォークを一緒にお皿の4時の位置に置くの。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Those are important signals to the server! What about using utensils? I know that can be confusing.",
+          "jp_text": "それらはサーバーへの重要なシグナルだね！食器の使い方はどう？それは混乱することがあると思うけど。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "The basic rule is work from the outside in. The utensils farthest from your plate are for the first course. But honestly, if you're unsure, just watch what others do or ask the server. They're used to helping!",
+          "jp_text": "基本的なルールは外側から内側へ。お皿から最も遠い食器が最初のコース用。でも正直、確信がない場合は、他の人がすることを見るかサーバーに聞くの。彼らは助けることに慣れているから！"
+        },
+        {
+          "speaker": "mike",
+          "text": "Good advice. Now, let's talk about the end of the meal. How do you get the check?",
+          "jp_text": "良いアドバイスだ。さて、食事の終わりについて話そう。どうやってお会計をもらう？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "When we were ready to leave, I said to David, 'Could we have the check, please?' Some people say 'bill' instead of 'check' - both are fine. He brought it over in a leather folder, and that's when I started calculating in my head.",
+          "jp_text": "帰る準備ができた時、デイビッドに「お会計をお願いします」って言ったの。「チェック」の代わりに「ビル」と言う人もいる - どちらでも大丈夫。レザーフォルダに入れて持ってきてくれて、その時頭の中で計算し始めたわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Let's break down tipping for our listeners. The standard in the US is 15-20% for good service. How do you calculate that quickly?",
+          "jp_text": "リスナーのためにチップについて詳しく説明しよう。アメリカでの標準は良いサービスに対して15-20％。それを素早く計算するには？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "The bill came to $78 before tax. I had learned a quick trick for calculating 20% - you move the decimal point one place to the left, which gives you $7.80, then double it to get $15.60. For 15%, you can calculate 10% and add half of that.",
+          "jp_text": "税抜きで78ドルだったの。20％を計算する簡単なコツを学んでいたの - 小数点を左に一つ動かして7.80ドルにして、それを2倍にして15.60ドルにするの。15％の場合は、10％を計算してその半分を足すの。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That's brilliant! But you mentioned being confused about tipping on comped items?",
+          "jp_text": "それは素晴らしい！でもサービスされた商品へのチップについて混乱したと言ってたね？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Yes! I quietly asked Emma, and she said that since the service recovery was so excellent, I should tip on what the original bill would have been. So I calculated 20% on the full amount, which was about $18. Given the exceptional service recovery, I felt it was appropriate to be generous.",
+          "jp_text": "そう！エマに小声で聞いたら、サービスリカバリーがとても素晴らしかったから、元の請求額で計算すべきだって言ったの。だから満額の20％を計算して、約18ドルにしたわ。例外的なサービスリカバリーを考えて、気前よくするのが適切だと思ったの。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That's very thoughtful! Let's talk about different payment methods. How did you pay?",
+          "jp_text": "それはとても思いやりがあるね！異なる支払い方法について話そう。どうやって支払った？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "I paid with my credit card. When David brought back the receipt to sign, there were two lines - one for the tip amount and one for the total. I wrote $18.00 on the tip line and calculated the new total. Always double-check your math!",
+          "jp_text": "クレジットカードで支払ったわ。デイビッドがサインのためにレシートを持ってきた時、2行あったの - 一つはチップの金額、もう一つは合計。チップの行に18.00ドルと書いて新しい合計を計算したの。必ず計算を再確認して！"
+        },
+        {
+          "speaker": "mike",
+          "text": "Good tip about double-checking! What if you're paying cash?",
+          "jp_text": "再確認についての良いヒントだ！現金で支払う場合は？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "With cash, you can either leave the tip on the table or hand it directly to the server. If your bill is $78 and you give them $100, you might say, 'Keep the change' if you want them to keep all $22, or 'I just need $5 back' if you want to leave a $17 tip.",
+          "jp_text": "現金の場合、チップをテーブルに残すか、サーバーに直接渡すことができるわ。請求が78ドルで100ドルを渡す場合、22ドル全部を取っておいてほしければ「お釣りは結構です」と言うか、17ドルのチップを残したければ「5ドルだけお釣りをください」と言うの。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Perfect examples! Now, what about splitting the bill with friends?",
+          "jp_text": "完璧な例だ！友達と割り勘する場合はどう？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Great question! When the server asks, 'Will this be together or separate?' you can say 'Separate, please' for individual checks. Or 'Together, but could we split it evenly between two cards?' Some places might say they can't split bills, so it's good to ask beforehand.",
+          "jp_text": "素晴らしい質問！サーバーが「ご一緒ですか、別々ですか？」と聞いた時、個別の会計には「別々でお願いします」と言えるわ。または「一緒ですが、2枚のカードで均等に分けていただけますか？」割り勘できない場所もあるから、事前に聞くのが良いわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That's really helpful. Before we wrap up, let's talk about different types of restaurants and how tipping changes.",
+          "jp_text": "それは本当に役立つね。終わる前に、異なるタイプのレストランとチップの変化について話そう。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Yes! At fast-casual places where you order at a counter, tipping is usually optional - maybe 10% or just the change. But at cafes with table service, 15-18% is standard. Fine dining is typically 20% or more.",
+          "jp_text": "そうね！カウンターで注文するファストカジュアルな場所では、チップは通常任意 - 10％かお釣り程度。でもテーブルサービスがあるカフェでは15-18％が標準。高級レストランは通常20％以上よ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "What about buffets or all-you-can-eat places?",
+          "jp_text": "ビュッフェや食べ放題の場所はどう？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Good question! Even though you're serving yourself food, servers still bring drinks and clear plates. I usually tip 10-15% at buffets. The amount depends on how much service they provide.",
+          "jp_text": "良い質問！自分で食べ物を取っても、サーバーは飲み物を持ってきたりお皿を片付けたりするわ。ビュッフェでは通常10-15％チップを払うの。金額は提供されるサービスの量によるわ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "That makes sense. What about takeout or delivery?",
+          "jp_text": "それは理にかなってるね。テイクアウトやデリバリーはどう？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "For takeout, I usually tip 10-15% if there's a tip jar or if they provide extra service like packing special requests. For delivery, I always tip at least 18-20%, especially in bad weather or if they have to climb stairs to my apartment. Delivery drivers work really hard!",
+          "jp_text": "テイクアウトでは、チップ入れがあるか特別なリクエストの梱包などの追加サービスがある場合、通常10-15％チップを払うわ。デリバリーでは、特に悪天候やアパートの階段を上らなければならない場合、必ず最低18-20％チップを払うの。配達員は本当に一生懸命働いているから！"
+        },
+        {
+          "speaker": "mike",
+          "text": "Those are excellent guidelines! Now, let's do a quick review of key phrases our listeners should remember.",
+          "jp_text": "それは素晴らしいガイドラインだ！さて、リスナーが覚えるべき重要なフレーズを簡単に復習しよう。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Great idea! For reservations: 'I'd like to make a reservation for [number] people at [time].' For ordering: 'Could I have the [dish name], please?' or 'What do you recommend?'",
+          "jp_text": "素晴らしいアイデア！予約用：「[人数]名で[時間]に予約を取りたいのですが」注文用：「[料理名]をいただけますか？」または「何をお勧めしますか？」"
+        },
+        {
+          "speaker": "mike",
+          "text": "For dietary restrictions: 'I'm allergic to [ingredient]' or 'I'm vegetarian.' For problems: 'Excuse me, but there seems to be an issue with my order.'",
+          "jp_text": "食事制限用：「[材料]にアレルギーがあります」または「私はベジタリアンです」問題用：「すみませんが、注文に問題があるようです」"
+        },
+        {
+          "speaker": "sarah",
+          "text": "And for the check: 'Could we have the check, please?' And remember, when in doubt, just ask! 'Could you explain this menu item?' or 'I'm not familiar with this, could you help me?'",
+          "jp_text": "そしてお会計用：「お会計をお願いします」そして覚えておいて、迷ったら聞くだけ！「このメニュー項目を説明していただけますか？」または「これに詳しくないので、助けていただけますか？」"
+        },
+        {
+          "speaker": "mike",
+          "text": "Perfect! Any final advice for someone who's still nervous about dining out in English?",
+          "jp_text": "完璧！英語での外食にまだ緊張している人への最後のアドバイスは？"
+        },
+        {
+          "speaker": "sarah",
+          "text": "My biggest advice is don't be afraid to ask questions or ask for clarification. Say things like, 'I'm sorry, could you repeat that?' or 'Could you explain what this dish is?' Restaurant staff deal with customers from all over the world, so they're used to helping with language barriers.",
+          "jp_text": "私の一番のアドバイスは、質問したり説明を求めたりすることを恐れないこと。「すみません、もう一度言っていただけますか？」とか「この料理が何か説明していただけますか？」などと言うの。レストランスタッフは世界中のお客様を相手にしているから、言語の壁を助けることに慣れているのよ。"
+        },
+        {
+          "speaker": "mike",
+          "text": "Also, remember that making mistakes is okay! I once accidentally ordered three appetizers thinking they were different types of the same dish. The server kindly clarified, and we all had a good laugh.",
+          "jp_text": "また、間違いをしても大丈夫だということを覚えておいて！私は一度、同じ料理の異なるタイプだと思って誤って前菜を3つ注文したことがある。サーバーが親切に説明してくれて、みんなで大笑いしたよ。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Exactly! And remember, even if you make mistakes, it's all part of the learning process. Don't let fear stop you from enjoying great food and experiences! Practice these phrases, start with casual restaurants, and build your confidence.",
+          "jp_text": "その通り！そして覚えておいて、間違いをしたとしても、それは全て学習プロセスの一部よ。恐れが素晴らしい食事と経験を楽しむことを止めさせてはダメ！これらのフレーズを練習して、カジュアルなレストランから始めて、自信をつけていって。"
+        },
+        {
+          "speaker": "mike",
+          "text": "One more thing - many restaurants now have online menus. Looking at these beforehand can really help you prepare and feel more confident!",
+          "jp_text": "もう一つ - 多くのレストランは今オンラインメニューがある。事前にこれらを見ることは準備に役立ち、より自信を持てるようになるよ！"
+        },
+        {
+          "speaker": "sarah",
+          "text": "That's a fantastic tip! You can look up unfamiliar words and even decide what to order before you go. It takes so much pressure off!",
+          "jp_text": "それは素晴らしいヒント！知らない単語を調べたり、行く前に何を注文するか決めたりできるわ。プレッシャーがとても軽減されるの！"
+        },
+        {
+          "speaker": "mike",
+          "text": "Well, that brings us to the end of today's episode. Thank you all for joining us on Restaurant Experiences. We hope these tips, stories, and practice sessions help you feel more confident the next time you dine out.",
+          "jp_text": "さて、今日のエピソードの終わりです。Restaurant Experiencesに参加してくれてありがとう。これらのヒント、話、練習セッションが、次回外食する時により自信を持つのに役立つことを願っています。"
+        },
+        {
+          "speaker": "sarah",
+          "text": "Next time, we'll be talking about shopping experiences - from grocery stores to department stores. We'll cover everything from asking for help to returning items. Until then, happy dining everyone!",
+          "jp_text": "次回は、食料品店からデパートまでのショッピング体験について話します。助けを求めることから商品の返品まで全てをカバーします。それまで、みなさん楽しい食事を！"
+        },
+        {
+          "speaker": "mike",
+          "text": "Thanks for listening, and remember - every meal is a chance to practice and improve your English! Don't be afraid to get out there and try!",
+          "jp_text": "聞いてくれてありがとう。そして覚えておいて - 食事のたびに英語を練習し向上させるチャンスです！外に出て挑戦することを恐れないで！"
+        },
+        {
+          "speaker": "sarah",
+          "text": "See you next time! And bon appetit!",
+          "jp_text": "また次回！そしてボナペティ！"
+        }
+      ]
+    }
+  ]
+}

@@ -17,7 +17,7 @@ poetry shell
 ```
 poetry run python -m src.main --series 001
 poetry run python -m src.main --series 002
-
+poetry run python -m src.main --series 003
 ```
 Project Structure
 
